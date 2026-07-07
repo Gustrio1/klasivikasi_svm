@@ -84,60 +84,22 @@
                 </dl>
             </div>
 
-            {{-- Card Nilai Evaluasi --}}
+            {{-- Card Catatan Evaluasi --}}
             <div class="card">
                 <h3 class="text-base font-semibold text-gray-800 mb-4 flex items-center gap-2">
                     <div class="w-7 h-7 rounded-lg bg-amber-100 flex items-center justify-center">
                         <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                         </svg>
                     </div>
-                    Nilai Evaluasi Guru
+                    Catatan Evaluasi Guru
                 </h3>
 
-                @if($hafalan->nilaiEvaluasi)
-                    @php $nilai = $hafalan->nilaiEvaluasi; @endphp
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-500">Nilai Makhraj</span>
-                                <span
-                                    class="font-semibold text-gray-700">{{ number_format($nilai->nilai_makhraj * 100, 1) }}%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="bg-indigo-500 h-2.5 rounded-full" style="width: {{ $nilai->nilai_makhraj * 100 }}%">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-500">Nilai Fashohah</span>
-                                <span
-                                    class="font-semibold text-gray-700">{{ number_format($nilai->nilai_fashohah * 100, 1) }}%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="bg-purple-500 h-2.5 rounded-full"
-                                    style="width: {{ $nilai->nilai_fashohah * 100 }}%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-sm mb-1">
-                                <span class="text-gray-500 font-semibold">Nilai Total</span>
-                                <span class="font-bold text-green-700">{{ number_format($nilai->nilai_total * 100, 1) }}%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-teal-500 to-green-500 h-3 rounded-full"
-                                    style="width: {{ $nilai->nilai_total * 100 }}%"></div>
-                            </div>
-                        </div>
-
-                        @if($nilai->catatan_guru)
-                            <div class="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                                <p class="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1">💬 Catatan Guru</p>
-                                <p class="text-sm text-amber-800">{{ $nilai->catatan_guru }}</p>
-                            </div>
-                        @endif
+                @if($hafalan->nilaiEvaluasi && $hafalan->nilaiEvaluasi->catatan_guru)
+                    <div class="p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                        <p class="text-xs text-amber-600 font-semibold uppercase tracking-wide mb-1.5">💬 Bimbingan Guru</p>
+                        <p class="text-sm text-amber-800 italic">"{{ $hafalan->nilaiEvaluasi->catatan_guru }}"</p>
                     </div>
                 @else
                     <div class="py-8 text-center text-gray-400">
@@ -145,7 +107,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <p class="text-sm">Belum ada nilai evaluasi dari guru</p>
+                        <p class="text-sm">Belum ada catatan evaluasi dari guru</p>
                     </div>
                 @endif
             </div>

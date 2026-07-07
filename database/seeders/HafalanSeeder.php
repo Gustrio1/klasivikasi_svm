@@ -191,17 +191,8 @@ class HafalanSeeder extends Seeder
         ];
 
         foreach ($hafalanList as $idx => [$surah, $jmlAyat, $mediaId, $tgl]) {
-            // Evaluasi diacak saja karena nilai kelancaran dan makhraj dihapus dari hafalan input.
-            $makhraj    = rand(60, 95) / 100;
-            $fashohah   = round($makhraj + (rand(-5, 5) / 100), 2);
-            $fashohah   = max(0, min(1, $fashohah));
-            $nilaiTotal = ($makhraj + $fashohah) / 2;
-
             NilaiEvaluasi::create([
                 'id_hafalan'      => $hafalanIds[$idx],
-                'nilai_makhraj'   => $makhraj,
-                'nilai_fashohah'  => $fashohah,
-                'nilai_total'     => $nilaiTotal,
                 'catatan_guru'    => $catatanGuru[$idx],
                 'tanggal_evaluasi' => Carbon::parse($tgl)->addDays(1),
             ]);

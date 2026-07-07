@@ -77,6 +77,11 @@ Route::middleware(['auth', 'role:admin'])
         // ── Media Hafalan ─────────────────────────────────────────────────────────
         Route::resource('media-hafalan', MediaHafalanController::class);
 
+        // ── Data Hafalan ──────────────────────────────────────────────────────────
+        Route::resource('hafalan', DataHafalanController::class)
+            ->only(['index', 'show'])
+            ->parameters(['hafalan' => 'dataHafalan']);
+
         // ── Laporan ───────────────────────────────────────────────────────────────
         Route::get('laporan/{laporan}/download', [LaporanController::class , 'download'])
             ->name('laporan.download');
@@ -137,12 +142,8 @@ Route::middleware(['auth', 'role:guru'])
         Route::get('perhitungan-svm', [SvmPerhitunganController::class, 'index'])
             ->name('perhitungan-svm.index');
 
-        // ── Media Hafalan (read-only) ─────────────────────────────────────────────
-        Route::prefix('media-hafalan')->name('media-hafalan.')->group(function () {
-            Route::get('/', [MediaHafalanController::class , 'index'])->name('index');
-            Route::get('/{mediaHafalan}', [MediaHafalanController::class , 'show'])->name('show');
-        }
-        );
+        // ── Media Hafalan ─────────────────────────────────────────────────────────
+        Route::resource('media-hafalan', MediaHafalanController::class);
 
         // ── Laporan ───────────────────────────────────────────────────────────────
         Route::get('laporan/{laporan}/download', [LaporanController::class , 'download'])

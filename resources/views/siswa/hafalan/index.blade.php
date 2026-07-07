@@ -57,8 +57,6 @@
                     <th class="table-th">Ayat</th>
                     <th class="table-th">Semester</th>
                     <th class="table-th">Tgl Input</th>
-                    <th class="table-th">Kelancaran</th>
-                    <th class="table-th">Makhraj</th>
                     <th class="table-th">Aksi</th>
                 </tr>
             </thead>
@@ -73,31 +71,13 @@
                             {{ \Carbon\Carbon::parse($hf->tanggal_input)->translatedFormat('d F Y') }}
                         </td>
                         <td class="table-td">
-                            <div class="flex items-center gap-2">
-                                <div class="w-16 bg-gray-200 rounded-full h-1.5">
-                                    <div class="bg-teal-500 h-1.5 rounded-full"
-                                         style="width: {{ $hf->nilai_kelancaran * 100 }}%"></div>
-                                </div>
-                                <span class="text-xs text-gray-600">{{ number_format($hf->nilai_kelancaran * 100, 0) }}%</span>
-                            </div>
-                        </td>
-                        <td class="table-td">
-                            <div class="flex items-center gap-2">
-                                <div class="w-16 bg-gray-200 rounded-full h-1.5">
-                                    <div class="bg-indigo-500 h-1.5 rounded-full"
-                                         style="width: {{ $hf->nilai_makhraj * 100 }}%"></div>
-                                </div>
-                                <span class="text-xs text-gray-600">{{ number_format($hf->nilai_makhraj * 100, 0) }}%</span>
-                            </div>
-                        </td>
-                        <td class="table-td">
                             <a href="{{ route('siswa.hafalan.show', $hf->id) }}"
                                class="btn-secondary py-1.5 px-3 text-xs">Detail</a>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="8">
+                        <td colspan="6">
                             <div class="py-16 text-center">
                                 <svg class="w-16 h-16 mx-auto mb-4 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"

@@ -15,17 +15,11 @@ class NilaiEvaluasi extends Model
 
     protected $fillable = [
         'id_hafalan',
-        'nilai_makhraj',
-        'nilai_fashohah',
-        'nilai_total',
         'catatan_guru',
         'tanggal_evaluasi',
     ];
 
     protected $casts = [
-        'nilai_makhraj'   => 'float',
-        'nilai_fashohah'  => 'float',
-        'nilai_total'     => 'float',
         'tanggal_evaluasi' => 'datetime',
     ];
 

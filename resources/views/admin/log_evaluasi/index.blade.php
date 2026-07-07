@@ -49,8 +49,8 @@
                     <tr class="hover:bg-gray-50 transition">
                         <td class="table-td text-center text-gray-400">{{ $logs->firstItem() + $loop->index }}</td>
                         <td class="table-td">
-                            <div class="font-bold text-gray-800">{{ $log->modelSvm->versi_model }}</div>
-                            <div class="text-[10px] text-gray-400 uppercase tracking-tighter">{{ $log->modelSvm->kernel_type }} kernel</div>
+                            <div class="font-bold text-gray-800">{{ $log->modelSvm?->versi_model ?? 'Model Terhapus' }}</div>
+                            <div class="text-[10px] text-gray-400 uppercase tracking-tighter">{{ $log->modelSvm?->kernel_type ?? '-' }} kernel</div>
                         </td>
                         <td class="table-td text-center">
                             <span class="px-2 py-1 bg-green-50 text-green-700 rounded-lg font-mono font-black text-xs border border-green-100">{{ number_format($log->akurasi, 2) }}%</span>
@@ -58,7 +58,7 @@
                         <td class="table-td text-center font-mono text-gray-600">{{ number_format($log->precision, 3) }}</td>
                         <td class="table-td text-center font-mono text-gray-600">{{ number_format($log->recall, 3) }}</td>
                         <td class="table-td text-center font-mono text-gray-600 font-black text-indigo-600">{{ number_format($log->f1_score, 3) }}</td>
-                        <td class="table-td text-center text-xs text-gray-500">{{ $log->tanggal_evaluasi->format('d/m/Y H:i') }}</td>
+                        <td class="table-td text-center text-xs text-gray-500">{{ $log->tanggal_evaluasi?->format('d/m/Y H:i') ?? '-' }}</td>
                         <td class="table-td text-center">
                             <a href="{{ route('admin.log-evaluasi.show', $log->id) }}" class="p-1.5 text-indigo-500 hover:bg-indigo-50 rounded-lg transition" title="Lihat Detail & Confusion Matrix">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>

@@ -33,13 +33,12 @@ class DatabaseSeeder extends Seeder
         // Aktifkan kembali FK check
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        // Jalankan seeder dalam urutan yang benar
         $this->call([
-            UserSeeder::class,    // users, guru, siswa
-            HafalanSeeder::class, // data_training, model_svm, media_hafalan,
-                                  // data_hafalan, nilai_evaluasi,
-                                  // hasil_klasifikasi, rekomendasi_siswa,
-                                  // log_evaluasi_model
+            UserSeeder::class,              // users, guru, siswa
+            HafalanSeeder::class,           // data_training, model_svm, media_hafalan,
+                                            // data_hafalan, nilai_evaluasi,
+                                            // hasil_klasifikasi, log_evaluasi_model
+            SiswaRealSeeder::class,         // 188 siswa real dari CSV + data hafalan massal + nilai + training
         ]);
 
         $this->command->newLine();

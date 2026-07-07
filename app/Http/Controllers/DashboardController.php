@@ -49,11 +49,7 @@ class DashboardController extends Controller
             ->latest('tanggal_klasifikasi')
             ->value('kelas_prediksi');
 
-        $nilaiRataRata = round(
-            NilaiEvaluasi::whereHas('dataHafalan', fn($q) => $q->where('id_siswa', $siswaId))
-                ->avg('nilai_total') ?? 0,
-            2
-        );
+        $nilaiRataRata = 0;
 
 
 

@@ -20,12 +20,42 @@ class DataHafalanController extends Controller
 
         $query = DataHafalan::with(['siswa.user', 'guru.user', 'nilaiEvaluasi']);
 
-        if ($user->role === 'guru') {
+        if ($user->role === 'admin') {
+            $view = 'admin.hafalan.index';
+        } elseif ($user->role === 'guru') {
             $query->where('id_guru', $user->guru->id);
             $view = 'guru.hafalan.index';
         } else {
             $query->where('id_siswa', $user->siswa->id);
             $view = 'siswa.hafalan.index';
+        }
+
+        // Filter pencarian nama siswa
+        if (request()->filled('search')) {
+            $search = request('search');
+            $query->whereHas('siswa.user', function ($q) use ($search) {
+                $q->where('nama_lengkap', 'LIKE', "%{$search}%");
+            });
+        }
+
+        // Filter surah
+        if (request()->filled('surah')) {
+            $query->where('nama_surah', 'LIKE', '%' . request('surah') . '%');
+        }
+
+        // Filter kelas/rentang kelas
+        if (request()->filled('kelas')) {
+            $query->whereHas('siswa', function ($q) {
+                $q->where('kelas', 'LIKE', '%' . request('kelas') . '%');
+            });
+        }
+
+        // Filter tanggal input
+        if (request()->filled('start_date')) {
+            $query->whereDate('tanggal_input', '>=', request('start_date'));
+        }
+        if (request()->filled('end_date')) {
+            $query->whereDate('tanggal_input', '<=', request('end_date'));
         }
 
         $hafalan = $query->latest('tanggal_input')->paginate(15);
@@ -94,7 +124,11 @@ class DataHafalanController extends Controller
             'nilaiEvaluasi',
         ]);
 
-        $view = auth()->user()->role === 'guru' ? 'guru.hafalan.show' : 'siswa.hafalan.show';
+        $view = match (auth()->user()->role) {
+            'admin' => 'admin.hafalan.show',
+            'guru'  => 'guru.hafalan.show',
+            default => 'siswa.hafalan.show',
+        };
         return view($view, ['hafalan' => $dataHafalan]);
     }
 

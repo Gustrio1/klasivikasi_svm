@@ -104,9 +104,6 @@
         <button @click="activeTab = 'riwayat'" :class="activeTab === 'riwayat' ? 'border-b-2 border-indigo-600 text-indigo-700 font-bold' : 'text-gray-500 hover:text-gray-700 font-medium'" class="px-6 py-3 text-sm transition whitespace-nowrap">
             Riwayat Hafalan
         </button>
-        <button @click="activeTab = 'grafik'" :class="activeTab === 'grafik' ? 'border-b-2 border-indigo-600 text-indigo-700 font-bold' : 'text-gray-500 hover:text-gray-700 font-medium'" class="px-6 py-3 text-sm transition whitespace-nowrap">
-            Grafik Perkembangan
-        </button>
         <button @click="activeTab = 'klasifikasi'" :class="activeTab === 'klasifikasi' ? 'border-b-2 border-indigo-600 text-indigo-700 font-bold' : 'text-gray-500 hover:text-gray-700 font-medium'" class="px-6 py-3 text-sm transition whitespace-nowrap">
             Histori SVM
         </button>
@@ -124,8 +121,7 @@
                     <tr>
                         <th class="table-th w-10 text-center">No</th>
                         <th class="table-th">Surah & Ayat</th>
-                        <th class="table-th text-center">Nilai Input</th>
-                        <th class="table-th text-center">Nilai Evaluasi</th>
+                        <th class="table-th text-center">Status Evaluasi</th>
                         <th class="table-th text-center">Prediksi SVM</th>
                         <th class="table-th">Waktu Setor</th>
                     </tr>
@@ -133,20 +129,16 @@
                 <tbody class="divide-y divide-gray-100">
                     @forelse($hafalans->sortByDesc('tanggal_input') as $idx => $haf)
                         <tr class="hover:bg-gray-50 transition">
-                            <td class="table-td text-center text-gray-400 text-sm">{{ $idx + 1 }}</td>
+                            <td class="table-td text-center text-gray-400 text-sm">{{ $loop->iteration }}</td>
                             <td class="table-td">
                                 <p class="font-bold text-gray-800">{{ $haf->nama_surah }}</p>
                                 <p class="text-xs text-gray-500 mt-0.5">{{ $haf->jumlah_ayat }} Ayat</p>
                             </td>
                             <td class="table-td text-center">
-                                <div class="text-xs inline-flex gap-2 text-gray-600 bg-gray-50 px-2.5 py-1 rounded shadow-inner">
-                                    <span title="Kelancaran">🗣️ {{ $haf->nilai_kelancaran * 100 }}</span> | 
-                                    <span title="Makhraj">🔊 {{ $haf->nilai_makhraj * 100 }}</span>
-                                </div>
-                            </td>
-                            <td class="table-td text-center">
                                 @if($haf->nilaiEvaluasi)
-                                    <span class="font-bold text-teal-600">{{ number_format($haf->nilaiEvaluasi->nilai_total, 1) }}</span>
+                                    <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-green-700 bg-green-100 px-2 py-1 rounded-full">
+                                        Sudah Dievaluasi
+                                    </span>
                                 @else
                                     <span class="text-xs text-gray-400 italic">Belum dinilai</span>
                                 @endif
@@ -173,50 +165,11 @@
                             </td>
                         </tr>
                     @empty
-                        <tr><td colspan="6" class="p-8 text-center text-gray-400">Belum ada riwayat hafalan untuk siswa ini.</td></tr>
+                        <tr><td colspan="5" class="p-8 text-center text-gray-400">Belum ada riwayat hafalan untuk siswa ini.</td></tr>
                     @endforelse
                 </tbody>
             </table>
         </div>
-    </div>
-
-    {{-- TAB: GRAFIK --}}
-    <div x-show="activeTab === 'grafik'" x-transition class="card p-6 border-none shadow-xl" style="display: none;">
-        @if($hafalans->count() >= 2)
-            <div class="h-80 w-full relative">
-                <canvas id="chartAdmin"></canvas>
-            </div>
-            @push('scripts')
-                @php
-                    $grafikData = $hafalans->sortBy('tanggal_input')->take(-15);
-                    $labels = $grafikData->map(fn($h) => \Carbon\Carbon::parse($h->tanggal_input)->format('d/m'))->values();
-                    $dataKelancaran = $grafikData->map(fn($h) => $h->nilai_kelancaran * 100)->values();
-                    $dataMakhraj = $grafikData->map(fn($h) => $h->nilai_makhraj * 100)->values();
-                    $dataFashohah = $grafikData->map(fn($h) => $h->nilaiEvaluasi ? $h->nilaiEvaluasi->nilai_fashohah : 0)->values();
-                @endphp
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        new Chart(document.getElementById('chartAdmin').getContext('2d'), {
-                            type: 'line',
-                            data: {
-                                labels: {!! json_encode($labels) !!},
-                                datasets: [
-                                    { label: 'Kelancaran (%)', data: {!! json_encode($dataKelancaran) !!}, borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.1)', borderWidth: 2, tension: 0.3, fill: true },
-                                    { label: 'Makhraj (%)', data: {!! json_encode($dataMakhraj) !!}, borderColor: '#0d9488', backgroundColor: 'transparent', borderWidth: 2, borderDash: [5, 5], tension: 0.3 },
-                                    { label: 'Fashohah / Evaluasi', data: {!! json_encode($dataFashohah) !!}, borderColor: '#d97706', backgroundColor: 'transparent', borderWidth: 2, tension: 0.3 }
-                                ]
-                            },
-                            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { usePointStyle: true, boxWidth: 6 } } }, scales: { y: { min: 0, max: 100, ticks: { stepSize: 20 } } } }
-                        });
-                    });
-                </script>
-            @endpush
-        @else
-            <div class="py-12 text-center text-gray-400">
-                <svg class="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
-                Grafik belum tersedia. Minimal 2 data hafalan diperlukan.
-            </div>
-        @endif
     </div>
 
     {{-- TAB: HISTORI SVM --}}

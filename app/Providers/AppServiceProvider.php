@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         // Set locale tanggal ke Bahasa Indonesia
         Carbon::setLocale('id');
 
-        // Gunakan Tailwind CSS untuk styling pagination
-        Paginator::useTailwind();
+        // Gunakan Custom Pagination View
+        Paginator::defaultView('vendor.pagination.custom');
     }
 }

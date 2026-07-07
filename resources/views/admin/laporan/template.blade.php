@@ -119,16 +119,9 @@
     @php
         // Perhitungan Bagian 1 Ringkasan
         $totalSesi = $hafalan->count();
-        $totalEvaluasi = 0;
-        $sumMakhraj = 0; $sumFashohah = 0;
-        $kelasA = 0; $kelasB = 0; $kelasC = 0;
+        $kelasA = 0; $kelasB = 0;
 
         foreach($hafalan as $h) {
-            if ($h->nilaiEvaluasi) {
-                $sumMakhraj += $h->nilaiEvaluasi->nilai_makhraj;
-                $sumFashohah += $h->nilaiEvaluasi->nilai_fashohah;
-                $totalEvaluasi++;
-            }
             $klasifikasi = $siswa->hasilKlasifikasis->where('periode_semester', $h->periode_semester)->last();
             if ($klasifikasi) {
                 $k = strtoupper($klasifikasi->kelas_prediksi);
@@ -136,10 +129,6 @@
                 elseif ($k == 'TIDAK LULUS') $kelasB++;
             }
         }
-        
-        $avgMakhraj = $totalEvaluasi > 0 ? $sumMakhraj / $totalEvaluasi : 0;
-        $avgFashohah = $totalEvaluasi > 0 ? $sumFashohah / $totalEvaluasi : 0;
-        $rataRata = ($avgMakhraj + $avgFashohah) / 2;
     @endphp
 
     <div class="header-container">
@@ -178,13 +167,11 @@
     <table class="data-table">
         <tr>
             <th>Total Sesi Setoran</th>
-            <th>Nilai Rata-rata Total</th>
             <th>Jumlah Prediksi Lulus</th>
             <th>Jumlah Prediksi Tidak Lulus</th>
         </tr>
         <tr>
             <td class="text-center">{{ $totalSesi }} Sesi</td>
-            <td class="text-center">{{ number_format($rataRata * 100, 1) }}%</td>
             <td class="text-center">{{ $kelasA }}</td>
             <td class="text-center">{{ $kelasB }}</td>
         </tr>
@@ -197,32 +184,30 @@
             <th width="20%">Surah</th>
             <th width="12%">Ayat</th>
             <th width="18%">Tanggal</th>
-            <th width="10%">Kelancaran</th>
-            <th width="10%">Makhraj</th>
-            <th width="15%">Nilai Total</th>
-            <th width="10%">Kelas (SVM)</th>
+            <th width="15%">Semester</th>
+            <th width="20%">Kelas (SVM)</th>
+            <th width="30%">Catatan Evaluasi</th>
         </tr>
         @forelse($hafalan->sortBy('tanggal_input') as $idx => $h)
             <tr>
-                <td class="text-center">{{ $idx + 1 }}</td>
+                <td class="text-center">{{ $loop->iteration }}</td>
                 <td>{{ $h->nama_surah }}</td>
                 <td class="text-center">{{ $h->jumlah_ayat }} Ayat</td>
                 <td class="text-center">{{ \Carbon\Carbon::parse($h->tanggal_input)->format('d/m/Y H:i') }}</td>
-                <td class="text-center">{{ number_format($h->nilai_kelancaran * 100, 0) }}%</td>
-                <td class="text-center">{{ number_format($h->nilai_makhraj * 100, 0) }}%</td>
-                <td class="text-center">
-                    {{ $h->nilaiEvaluasi ? number_format($h->nilaiEvaluasi->nilai_total * 100, 1) . '%' : '-' }}
-                </td>
+                <td class="text-center">{{ $h->periode_semester ?? '-' }}</td>
                 <td class="text-center">
                     @php 
                         $klas = $siswa->hasilKlasifikasis->where('periode_semester', $h->periode_semester)->last();    
                     @endphp
                     {{ $klas ? strtoupper($klas->kelas_prediksi) : '-' }}
                 </td>
+                <td>
+                    {{ $h->nilaiEvaluasi?->catatan_guru ?? '-' }}
+                </td>
             </tr>
         @empty
             <tr>
-                <td colspan="8" class="text-center">Belum ada riwayat hafalan untuk periode ini.</td>
+                <td colspan="7" class="text-center">Belum ada riwayat hafalan untuk periode ini.</td>
             </tr>
         @endforelse
     </table>

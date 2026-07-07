@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual Book — Sistem Klasifikasi Hafalan Al-Qur'an Berbasis SVM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green-900: #064e3b;
+      --green-800: #065f46;
+      --green-700: #047857;
+      --green-600: #059669;
+      --green-500: #10b981;
+      --green-400: #34d399;
+      --green-100: #d1fae5;
+      --green-50:  #ecfdf5;
+      --gold:      #d97706;
+      --gold-light:#fef3c7;
+      --gray-900:  #111827;
+      --gray-800:  #1f2937;
+      --gray-700:  #374151;
+      --gray-600:  #4b5563;
+      --gray-400:  #9ca3af;
+      --gray-200:  #e5e7eb;
+      --gray-100:  #f3f4f6;
+      --white:     #ffffff;
+      --sidebar-w: 270px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--gray-900);
+      background: var(--gray-100);
+      display: flex;
+    }
+    #sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      background: linear-gradient(180deg, var(--green-900) 0%, var(--green-800) 100%);
+      overflow-y: auto;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+    }
+    #sidebar::-webkit-scrollbar { width: 4px; }
+    #sidebar::-webkit-scrollbar-thumb { background: var(--green-600); border-radius: 4px; }
+    .sidebar-header { padding: 28px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; color: var(--white); margin-bottom: 6px; }
+    .sidebar-logo .icon { width: 36px; height: 36px; background: var(--green-600); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .sidebar-logo span { font-size: 13px; font-weight: 700; line-height: 1.3; }
+    .sidebar-version { font-size: 11px; color: var(--green-400); background: rgba(52,211,153,0.1); display: inline-block; padding: 2px 8px; border-radius: 20px; margin-top: 6px; }
+    .sidebar-nav { padding: 16px 0; flex: 1; }
+    .nav-section { margin-bottom: 4px; }
+    .nav-section-title { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--green-400); padding: 12px 20px 4px; }
+    .nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 20px; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 500; transition: all 0.2s; border-left: 3px solid transparent; }
+    .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.08); color: var(--white); border-left-color: var(--green-400); }
+    .nav-link .nav-icon { width: 18px; text-align: center; font-size: 14px; }
+    .sidebar-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; color: rgba(255,255,255,0.4); text-align: center; }
+    #main { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; }
+    .topbar { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+    .topbar h1 { font-size: 14px; font-weight: 700; color: var(--gray-800); }
+    .btn-print { display: flex; align-items: center; gap: 6px; background: var(--green-700); color: var(--white); border: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .btn-print:hover { background: var(--green-900); }
+    .content { padding: 36px 40px 60px; max-width: 960px; }
+    .cover { background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--green-600) 100%); border-radius: 20px; padding: 60px 48px; color: var(--white); margin-bottom: 48px; position: relative; overflow: hidden; }
+    .cover::before { content: ''; position: absolute; top: -80px; right: -80px; width: 350px; height: 350px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+    .cover::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 250px; height: 250px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+    .cover-arabic { font-family: 'Amiri', serif; font-size: 28px; color: var(--green-400); margin-bottom: 8px; direction: rtl; }
+    .cover-tag { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green-400); margin-bottom: 16px; }
+    .cover h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .cover h1 span { color: var(--green-400); }
+    .cover p { font-size: 15px; color: rgba(255,255,255,0.8); max-width: 520px; margin-bottom: 28px; }
+    .cover-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .cover-meta-item { font-size: 12px; color: rgba(255,255,255,0.65); }
+    .cover-meta-item strong { display: block; font-size: 14px; color: var(--white); font-weight: 600; }
+    .section { margin-bottom: 48px; }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 2px solid var(--green-100); }
+    .section-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--green-600), var(--green-400)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .section-title { font-size: 22px; font-weight: 800; color: var(--green-900); }
+    .section-num { font-size: 12px; color: var(--green-600); font-weight: 600; }
+    h3 { font-size: 16px; font-weight: 700; color: var(--gray-800); margin: 24px 0 10px; }
+    h4 { font-size: 14px; font-weight: 700; color: var(--green-800); margin: 18px 0 8px; }
+    p { margin-bottom: 12px; color: var(--gray-700); }
+    .card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+    .card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .role-card { border-radius: 14px; padding: 22px; border: 2px solid; }
+    .role-card.admin { background: #fef2f2; border-color: #fca5a5; }
+    .role-card.guru { background: #eff6ff; border-color: #93c5fd; }
+    .role-card.siswa { background: var(--green-50); border-color: var(--green-400); }
+    .role-card h4 { margin-top: 0; }
+    .role-card.admin h4 { color: #991b1b; }
+    .role-card.guru h4 { color: #1e40af; }
+    .role-card.siswa h4 { color: var(--green-800); }
+    .role-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+    .role-badge.admin { background: #fee2e2; color: #991b1b; }
+    .role-badge.guru { background: #dbeafe; color: #1e40af; }
+    .role-badge.siswa { background: var(--green-100); color: var(--green-900); }
+    .role-card ul { padding-left: 18px; font-size: 13px; color: var(--gray-700); }
+    .role-card ul li { margin-bottom: 4px; }
+    .steps { counter-reset: step; }
+    .step { display: flex; gap: 18px; margin-bottom: 20px; align-items: flex-start; }
+    .step-num { counter-increment: step; width: 36px; height: 36px; background: var(--green-700); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex-shrink: 0; }
+    .step-content { flex: 1; }
+    .step-content h4 { margin-top: 0; }
+    .tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid var(--gray-200); margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead tr { background: var(--green-800); color: var(--white); }
+    thead th { padding: 12px 16px; text-align: left; font-weight: 600; white-space: nowrap; }
+    tbody tr:nth-child(even) { background: var(--gray-100); }
+    tbody tr:hover { background: var(--green-50); }
+    tbody td { padding: 10px 16px; color: var(--gray-700); vertical-align: top; }
+    .td-code { font-family: monospace; font-size: 12px; background: var(--gray-100); padding: 2px 6px; border-radius: 4px; }
+    .alert { display: flex; gap: 14px; align-items: flex-start; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13.5px; }
+    .alert-icon { font-size: 20px; flex-shrink: 0; line-height: 1.5; }
+    .alert-info { background: #eff6ff; border-left: 4px solid #3b82f6; }
+    .alert-warning { background: #fffbeb; border-left: 4px solid #f59e0b; }
+    .alert-success { background: var(--green-50); border-left: 4px solid var(--green-500); }
+    .alert-danger { background: #fef2f2; border-left: 4px solid #ef4444; }
+    .code-block { background: var(--gray-900); color: #a3e635; font-family: monospace; font-size: 13px; padding: 16px 20px; border-radius: 10px; margin-bottom: 16px; overflow-x: auto; line-height: 1.8; }
+    .code-block .comment { color: #6b7280; }
+    .formula { background: linear-gradient(135deg, var(--green-900), var(--green-800)); color: var(--white); border-radius: 12px; padding: 20px 24px; margin: 16px 0; font-family: monospace; font-size: 14px; }
+    .formula .lbl { font-size: 11px; color: var(--green-400); font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+    .formula .eq { font-size: 16px; color: #fbbf24; font-weight: 700; margin-bottom: 8px; }
+    .formula .desc { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.6; font-family: 'Inter', sans-serif; }
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 13.5px; }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list .fi { color: var(--green-600); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .toc { background: var(--white); border: 1px solid var(--gray-200); border-radius: 14px; padding: 28px 32px; margin-bottom: 40px; }
+    .toc h2 { font-size: 18px; font-weight: 800; margin-bottom: 16px; color: var(--green-900); }
+    .toc ol { padding-left: 20px; }
+    .toc > ol > li { margin-bottom: 10px; font-weight: 700; font-size: 14px; }
+    .toc li ul { padding-left: 18px; margin-top: 6px; }
+    .toc li ul li { font-weight: 400; font-size: 13px; margin-bottom: 4px; }
+    .toc a { color: var(--green-700); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    hr.divider { border: none; border-top: 2px dashed var(--gray-200); margin: 36px 0; }
+    .cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cheat-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 14px 18px; font-size: 13px; }
+    .cheat-item .url { font-family: monospace; font-size: 11px; color: var(--green-700); background: var(--green-50); padding: 3px 8px; border-radius: 6px; display: inline-block; margin-top: 4px; word-break: break-all; }
+    .cheat-item .label { font-weight: 700; color: var(--gray-800); margin-bottom: 2px; }
+    @media print {
+      #sidebar, .btn-print { display: none !important; }
+      #main { margin-left: 0; }
+      .topbar { position: static; border: none; }
+      body { background: white; }
+      .cover { border-radius: 0; }
+      .card, .tbl-wrap { break-inside: avoid; }
+      .section { break-before: page; }
+      .section:first-of-type { break-before: avoid; }
+    }
+    @media (max-width: 768px) {
+      #sidebar { display: none; }
+      #main { margin-left: 0; }
+      .content { padding: 20px 18px 40px; }
+      .card-row, .card-row-3 { grid-template-columns: 1fr; }
+      .cover h1 { font-size: 24px; }
+      .cheat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="icon">📖</div>
+      <span>Sistem Klasifikasi<br>Hafalan Al-Qur'an</span>
+    </div>
+    <div class="sidebar-version">Manual Book v1.0</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Pendahuluan</div>
+      <a href="#cover" class="nav-link"><span class="nav-icon">🏠</span> Halaman Utama</a>
+      <a href="#daftar-isi" class="nav-link"><span class="nav-icon">📋</span> Daftar Isi</a>
+      <a href="#pengantar" class="nav-link"><span class="nav-icon">📝</span> Pengantar Sistem</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Memulai</div>
+      <a href="#instalasi" class="nav-link"><span class="nav-icon">🚀</span> Instalasi</a>
+      <a href="#login" class="nav-link"><span class="nav-icon">🔐</span> Login Sistem</a>
+      <a href="#peran" class="nav-link"><span class="nav-icon">👥</span> Peran Pengguna</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Panduan Pengguna</div>
+      <a href="#admin" class="nav-link"><span class="nav-icon">🛡️</span> Panduan Admin</a>
+      <a href="#guru" class="nav-link"><span class="nav-icon">👨‍🏫</span> Panduan Guru</a>
+      <a href="#siswa-guide" class="nav-link"><span class="nav-icon">🧑‍🎓</span> Panduan Siswa</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Teknis SVM</div>
+      <a href="#svm-teori" class="nav-link"><span class="nav-icon">🧠</span> Teori SVM</a>
+      <a href="#svm-alur" class="nav-link"><span class="nav-icon">🔄</span> Alur Klasifikasi</a>
+      <a href="#data-training" class="nav-link"><span class="nav-icon">📊</span> Data Training</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Referensi</div>
+      <a href="#url-ref" class="nav-link"><span class="nav-icon">🔗</span> URL dan Rute</a>
+      <a href="#faq" class="nav-link"><span class="nav-icon">❓</span> FAQ</a>
+      <a href="#troubleshoot" class="nav-link"><span class="nav-icon">🔧</span> Troubleshoot</a>
+    </div>
+  </nav>
+  <div class="sidebar-footer">© 2025 Sistem SVM Hafalan Al-Qur'an</div>
+</aside>
+
+<div id="main">
+  <div class="topbar">
+    <h1>📖 Manual Book — Sistem Klasifikasi Hafalan Al-Qur'an Berbasis SVM</h1>
+    <button class="btn-print" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+  </div>
+
+  <div class="content">
+
+    <!-- COVER -->
+    <div class="cover" id="cover">
+      <div class="cover-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <div class="cover-tag">Dokumentasi Resmi Sistem</div>
+      <h1>Sistem Klasifikasi<br>Hafalan <span>Al-Qur'an</span></h1>
+      <p>Panduan lengkap penggunaan sistem prediksi kelulusan hafalan siswa berbasis algoritma <strong>Support Vector Machine (SVM) Linear</strong> yang terintegrasi dengan web berbasis Laravel.</p>
+      <div class="cover-meta">
+        <div class="cover-meta-item"><strong>Versi Sistem</strong> v1.0.0</div>
+        <div class="cover-meta-item"><strong>Framework</strong> Laravel 11 + Python SVM</div>
+        <div class="cover-meta-item"><strong>Bahasa</strong> Indonesia</div>
+        <div class="cover-meta-item"><strong>Tahun</strong> 2025</div>
+      </div>
+    </div>
+
+    <!-- DAFTAR ISI -->
+    <div class="toc" id="daftar-isi">
+      <h2>📋 Daftar Isi</h2>
+      <ol>
+        <li><a href="#pengantar">Pengantar Sistem</a>
+          <ul>
+            <li><a href="#pengantar">Tujuan dan Fitur Sistem</a></li>
+            <li><a href="#pengantar">Teknologi yang Digunakan</a></li>
+          </ul>
+        </li>
+        <li><a href="#instalasi">Instalasi dan Konfigurasi</a>
+          <ul>
+            <li><a href="#instalasi">Kebutuhan Sistem</a></li>
+            <li><a href="#instalasi">Langkah Setup</a></li>
+          </ul>
+        </li>
+        <li><a href="#login">Login dan Autentikasi</a></li>
+        <li><a href="#peran">Peran Pengguna</a></li>
+        <li><a href="#admin">Panduan Administrator</a>
+          <ul>
+            <li><a href="#admin">Dashboard Admin</a></li>
+            <li><a href="#admin">Manajemen User, Guru, Siswa</a></li>
+            <li><a href="#admin">Media Hafalan dan Data Training</a></li>
+            <li><a href="#admin">Model SVM dan Log Evaluasi</a></li>
+            <li><a href="#admin">Laporan</a></li>
+          </ul>
+        </li>
+        <li><a href="#guru">Panduan Guru</a>
+          <ul>
+            <li><a href="#guru">Dashboard Guru</a></li>
+            <li><a href="#guru">Kelola Siswa dan Data Hafalan</a></li>
+            <li><a href="#guru">Evaluasi Nilai dan Klasifikasi SVM Semester</a></li>
+            <li><a href="#guru">Generate Laporan PDF</a></li>
+          </ul>
+        </li>
+        <li><a href="#siswa-guide">Panduan Siswa</a></li>
+        <li><a href="#svm-teori">Teori dan Algoritma SVM</a></li>
+        <li><a href="#svm-alur">Alur Proses Klasifikasi</a></li>
+        <li><a href="#data-training">Manajemen Data Training</a></li>
+        <li><a href="#url-ref">Referensi URL dan Rute</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#troubleshoot">Troubleshoot</a></li>
+      </ol>
+    </div>
+
+    <!-- BAB 1: PENGANTAR -->
+    <div class="section" id="pengantar">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <div>
+          <div class="section-num">BAB 1</div>
+          <div class="section-title">Pengantar Sistem</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tentang Sistem Ini</h3>
+        <p>Sistem Klasifikasi Hafalan Al-Qur'an adalah aplikasi web berbasis <strong>Laravel 11</strong> yang dilengkapi dengan layanan prediksi berbasis <strong>Python (SVM Linear)</strong>. Sistem ini dirancang untuk membantu lembaga pendidikan Al-Qur'an dalam:</p>
+        <ul class="feature-list">
+          <li><span class="fi">✅</span> Mencatat dan memantau <strong>progress hafalan siswa</strong> secara terstruktur per surah dan per semester</li>
+          <li><span class="fi">✅</span> Melakukan <strong>klasifikasi kelulusan otomatis</strong> (Lulus / Tidak Lulus) menggunakan algoritma SVM Linear</li>
+          <li><span class="fi">✅</span> Mengelola <strong>data guru, siswa, dan media belajar</strong> dalam satu platform terintegrasi</li>
+          <li><span class="fi">✅</span> Menghasilkan <strong>laporan PDF</strong> hasil evaluasi hafalan per siswa</li>
+          <li><span class="fi">✅</span> Memantau <strong>kinerja model SVM</strong> melalui log evaluasi (akurasi, precision, recall, F1-score)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Teknologi yang Digunakan</h3>
+        <div class="card-row">
+          <div>
+            <h4>Backend &amp; Frontend</h4>
+            <div class="tbl-wrap">
+              <table>
+                <thead><tr><th>Komponen</th><th>Teknologi</th></tr></thead>
+                <tbody>
+                  <tr><td>Framework Web</td><td>Laravel 11 (PHP 8.2+)</td></tr>
+                  <tr><td>Template Engine</td><td>Blade + Vite</td></tr>
+                  <tr><td>Styling</td><td>Tailwind CSS 3</td></tr>
+                  <tr><td>Database</td><td>MySQL / MariaDB</td></tr>
+                  <tr><td>PDF Generator</td><td>Barryvdh/DomPDF</td></tr>
+                  <tr><td>CSV Import</td><td>League/CSV</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h4>Layanan SVM (Python)</h4>
+            <div class="tbl-wrap">
+              <table>
+                <thead><tr><th>Komponen</th><th>Detail</th></tr></thead>
+                <tbody>
+                  <tr><td>Bahasa</td><td>Python 3.x</td></tr>
+                  <tr><td>Algoritma</td><td>SVM Linear (Custom)</td></tr>
+                  <tr><td>Kernel</td><td>Linear</td></tr>
+                  <tr><td>Input Fitur</td><td>Total Surah, Usia, Media</td></tr>
+                  <tr><td>Output</td><td>Lulus / Tidak Lulus + Confidence</td></tr>
+                  <tr><td>Integrasi</td><td>CLI (Symfony Process)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 2: INSTALASI -->
+    <div class="section" id="instalasi">
+      <div class="section-header">
+        <div class="section-icon">🚀</div>
+        <div>
+          <div class="section-num">BAB 2</div>
+          <div class="section-title">Instalasi dan Konfigurasi</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Kebutuhan Sistem (Requirements)</h3>
+        <div class="card-row">
+          <div>
+            <h4>Software Wajib</h4>
+            <ul class="feature-list">
+              <li><span class="fi">🔧</span> PHP &ge; 8.2</li>
+              <li><span class="fi">🔧</span> Composer &ge; 2.x</li>
+              <li><span class="fi">🔧</span> Node.js &ge; 18 &amp; NPM</li>
+              <li><span class="fi">🔧</span> Python &ge; 3.8</li>
+              <li><span class="fi">🔧</span> MySQL &ge; 5.7 / MariaDB &ge; 10</li>
+            </ul>
+          </div>
+          <div>
+            <h4>PHP Extensions</h4>
+            <ul class="feature-list">
+              <li><span class="fi">✓</span> php-pdo / php-mysql</li>
+              <li><span class="fi">✓</span> php-json</li>
+              <li><span class="fi">✓</span> php-mbstring</li>
+              <li><span class="fi">✓</span> php-openssl</li>
+              <li><span class="fi">✓</span> php-gd (untuk PDF)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Langkah Instalasi</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Ekstrak / Clone Proyek</h4>
+              <div class="code-block">cd D:\riska<br>git clone &lt;repo-url&gt; web-svm<br>cd web-svm</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Install Dependensi PHP</h4>
+              <div class="code-block">composer install</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Install Dependensi Node.js</h4>
+              <div class="code-block">npm install</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Konfigurasi Environment</h4>
+              <div class="code-block">copy .env.example .env<br>php artisan key:generate</div>
+              <p>Edit file <code>.env</code> dan sesuaikan:</p>
+              <div class="code-block">DB_DATABASE=svm_hafalan<br>DB_USERNAME=root<br>DB_PASSWORD=<br><br>PYTHON_PATH=python</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>Migrasi dan Seed Database</h4>
+              <div class="code-block">php artisan migrate --seed</div>
+              <div class="alert alert-info"><span class="alert-icon">ℹ️</span> Seeder akan membuat akun admin default.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <h4>Setup Python SVM</h4>
+              <div class="code-block">cd svm_service<br>python -m venv .venv<br>.venv\Scripts\activate<br>pip install -r requirements.txt</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-content">
+              <h4>Jalankan Server</h4>
+              <div class="code-block"><span class="comment"># Terminal 1</span><br>php artisan serve<br><br><span class="comment"># Terminal 2</span><br>npm run dev</div>
+              <div class="alert alert-success"><span class="alert-icon">✅</span> Akses sistem di: <strong>http://127.0.0.1:8000</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 3: LOGIN -->
+    <div class="section" id="login">
+      <div class="section-header">
+        <div class="section-icon">🔐</div>
+        <div>
+          <div class="section-num">BAB 3</div>
+          <div class="section-title">Login dan Autentikasi</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Cara Masuk ke Sistem</h3>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Buka Browser</h4><p>Ketikkan alamat sistem (contoh: <code>http://127.0.0.1:8000</code>). Sistem otomatis mengarahkan ke halaman login.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Masukkan Kredensial</h4><p>Isi <strong>Username</strong> dan <strong>Password</strong> lalu klik <strong>"Login"</strong>.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Diarahkan ke Dashboard</h4><p>Sistem mengarahkan ke <strong>dashboard sesuai peran</strong> pengguna (Admin / Guru / Siswa).</p></div></div>
+        </div>
+        <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div>Siswa tidak menggunakan email — cukup <strong>username</strong> dan <strong>password</strong> yang diberikan guru/admin.</div></div>
+      </div>
+    </div>
+
+    <!-- BAB 4: PERAN -->
+    <div class="section" id="peran">
+      <div class="section-header">
+        <div class="section-icon">👥</div>
+        <div><div class="section-num">BAB 4</div><div class="section-title">Peran Pengguna (Role)</div></div>
+      </div>
+      <p>Sistem memiliki <strong>tiga peran</strong> pengguna dengan hak akses yang berbeda:</p>
+      <div class="card-row-3" style="margin-top:20px;">
+        <div class="role-card admin">
+          <span class="role-badge admin">👑 ADMIN</span>
+          <h4>Administrator</h4>
+          <p style="font-size:12px;color:#6b7280;">Superuser dengan akses penuh.</p>
+          <ul>
+            <li>Kelola semua user</li><li>Kelola guru &amp; siswa</li><li>Kelola model SVM</li>
+            <li>Kelola data training</li><li>Lihat semua laporan</li><li>Log evaluasi model</li>
+            <li>Perhitungan SVM detail</li>
+          </ul>
+        </div>
+        <div class="role-card guru">
+          <span class="role-badge guru">👨‍🏫 GURU</span>
+          <h4>Guru</h4>
+          <p style="font-size:12px;color:#6b7280;">Mengelola siswa yang diampu.</p>
+          <ul>
+            <li>Tambah/edit siswa binaan</li><li>Input data hafalan</li><li>Nilai evaluasi hafalan</li>
+            <li>Klasifikasi SVM semester</li><li>Generate laporan PDF</li><li>Kelola media hafalan</li>
+          </ul>
+        </div>
+        <div class="role-card siswa">
+          <span class="role-badge siswa">🧑‍🎓 SISWA</span>
+          <h4>Siswa</h4>
+          <p style="font-size:12px;color:#6b7280;">Akses read-only data pribadi.</p>
+          <ul>
+            <li>Lihat riwayat hafalan</li><li>Lihat hasil klasifikasi</li><li>Lihat nilai evaluasi</li>
+            <li>Unduh laporan sendiri</li><li>Lihat media hafalan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 5: ADMIN -->
+    <div class="section" id="admin">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <div><div class="section-num">BAB 5</div><div class="section-title">Panduan Administrator</div></div>
+      </div>
+
+      <div class="card">
+        <h3>5.1 Dashboard Admin</h3>
+        <ul class="feature-list">
+          <li><span class="fi">👤</span> <strong>Total User</strong> — semua pengguna terdaftar</li>
+          <li><span class="fi">👨‍🏫</span> <strong>Total Guru</strong> — jumlah guru aktif</li>
+          <li><span class="fi">🧑‍🎓</span> <strong>Total Siswa</strong> — jumlah seluruh siswa</li>
+          <li><span class="fi">📖</span> <strong>Total Hafalan</strong> — total entri hafalan</li>
+          <li><span class="fi">🤖</span> <strong>Model SVM Aktif</strong> — versi model yang digunakan</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>5.2 Manajemen User</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Aksi</th><th>Deskripsi</th><th>URL</th></tr></thead>
+          <tbody>
+            <tr><td>Lihat Daftar</td><td>Tampilkan semua user</td><td class="td-code">/admin/users</td></tr>
+            <tr><td>Tambah User</td><td>Buat akun baru</td><td class="td-code">/admin/users/create</td></tr>
+            <tr><td>Edit User</td><td>Ubah data dan password</td><td class="td-code">/admin/users/{id}/edit</td></tr>
+            <tr><td>Hapus User</td><td>Hapus permanen</td><td class="td-code">DELETE /admin/users/{id}</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>5.3 Manajemen Guru</h3>
+        <h4>Field Formulir Guru:</h4>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Field</th><th>Keterangan</th><th>Wajib?</th></tr></thead>
+          <tbody>
+            <tr><td>Username</td><td>Username login (unik)</td><td>✅</td></tr>
+            <tr><td>Password</td><td>Min. 8 karakter</td><td>✅</td></tr>
+            <tr><td>Nama Lengkap</td><td>Nama guru</td><td>✅</td></tr>
+            <tr><td>Email</td><td>Email guru (unik)</td><td>✅</td></tr>
+            <tr><td>NIP</td><td>Nomor Induk Pegawai</td><td>Opsional</td></tr>
+            <tr><td>Mata Pelajaran</td><td>Bidang ajar</td><td>Opsional</td></tr>
+            <tr><td>No. Telepon</td><td>Nomor kontak</td><td>Opsional</td></tr>
+          </tbody>
+        </table></div>
+        <div class="alert alert-warning"><span class="alert-icon">⚠️</span>Guru yang masih memiliki siswa atau data hafalan <strong>tidak dapat dihapus</strong>. Hapus data terkait terlebih dahulu.</div>
+      </div>
+
+      <div class="card">
+        <h3>5.4 Manajemen Siswa</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Field</th><th>Keterangan</th><th>Wajib?</th></tr></thead>
+          <tbody>
+            <tr><td>Username</td><td>Login siswa (unik)</td><td>✅</td></tr>
+            <tr><td>Password</td><td>Min. 8 karakter</td><td>✅</td></tr>
+            <tr><td>Nama Lengkap</td><td>Nama siswa</td><td>✅</td></tr>
+            <tr><td>NISN</td><td>Nomor Induk Siswa Nasional</td><td>Opsional</td></tr>
+            <tr><td>Kelas</td><td>A, B, atau C</td><td>Opsional</td></tr>
+            <tr><td>Jenis Kelamin</td><td>L (Laki-laki) / P (Perempuan)</td><td>✅</td></tr>
+            <tr><td>Tahun Lahir</td><td>Contoh: 2010</td><td>Opsional</td></tr>
+            <tr><td>Guru Pengampu</td><td>Pilih guru yang mengampu</td><td>✅ (Admin)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>5.5 Manajemen Media Hafalan</h3>
+        <p>Media hafalan adalah metode/alat bantu yang digunakan siswa. Tersedia di <strong>Admin &rarr; Media Hafalan</strong>.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Field</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>Nama Media</td><td>Contoh: Murottal, Kartu Hafalan</td></tr>
+            <tr><td>Jenis Media</td><td><code>digital</code> atau <code>cetak</code></td></tr>
+            <tr><td>URL Link</td><td>Tautan media digital (kosong jika cetak)</td></tr>
+            <tr><td>Deskripsi</td><td>Penjelasan media</td></tr>
+          </tbody>
+        </table></div>
+        <div class="alert alert-info"><span class="alert-icon">ℹ️</span>Menghapus media hanya menonaktifkannya, tidak menghapus dari database.</div>
+      </div>
+
+      <div class="card">
+        <h3>5.6 Data Training SVM</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Fitur</th><th>Kolom DB</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>X₁</td><td>fitur_total_surah</td><td>Jumlah total surah yang dihafalkan (1–120)</td></tr>
+            <tr><td>X₂</td><td>fitur_usia</td><td>Usia siswa (1–100)</td></tr>
+            <tr><td>X₃</td><td>id_media</td><td>ID media hafalan yang digunakan</td></tr>
+            <tr><td>Y</td><td>label_kelas</td><td><code>Lulus</code> atau <code>Tidak Lulus</code></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>5.7 Model SVM</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Field</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>Versi Model</td><td>Nama versi (contoh: v1.0-linear)</td></tr>
+            <tr><td>Kernel Type</td><td><code>linear</code> atau <code>rbf</code></td></tr>
+            <tr><td>Parameter C</td><td>Cost/regularisasi</td></tr>
+            <tr><td>Parameter Gamma</td><td>Gamma untuk kernel RBF</td></tr>
+            <tr><td>Akurasi Model</td><td>Akurasi dari testing (%)</td></tr>
+          </tbody>
+        </table></div>
+        <div class="alert alert-danger"><span class="alert-icon">⛔</span><strong>Model aktif tidak dapat dihapus.</strong> Aktifkan model lain terlebih dahulu.</div>
+      </div>
+
+      <div class="card">
+        <h3>5.8 Log Evaluasi Model</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Metrik</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>Akurasi</td><td>Persentase prediksi benar</td></tr>
+            <tr><td>Precision</td><td>Proporsi prediksi positif yang benar</td></tr>
+            <tr><td>Recall</td><td>Proporsi kasus positif yang terdeteksi</td></tr>
+            <tr><td>F1-Score</td><td>Harmonic mean Precision &amp; Recall</td></tr>
+            <tr><td>Confusion Matrix</td><td>Matriks performa per kelas (A/B/C)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- BAB 6: GURU -->
+    <div class="section" id="guru">
+      <div class="section-header">
+        <div class="section-icon">👨‍🏫</div>
+        <div><div class="section-num">BAB 6</div><div class="section-title">Panduan Guru</div></div>
+      </div>
+
+      <div class="card">
+        <h3>6.1 Dashboard Guru</h3>
+        <div class="card-row">
+          <ul class="feature-list">
+            <li><span class="fi">👥</span> <strong>Total Siswa</strong> yang diampu</li>
+            <li><span class="fi">📚</span> <strong>Total Hafalan</strong> tercatat</li>
+          </ul>
+          <ul class="feature-list">
+            <li><span class="fi">📅</span> <strong>Hafalan Hari Ini</strong></li>
+            <li><span class="fi">⏳</span> <strong>Perlu Dievaluasi</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>6.2 Kelola Siswa</h3>
+        <div class="alert alert-info"><span class="alert-icon">ℹ️</span>Guru hanya dapat melihat siswa <strong>yang diampu sendiri</strong>.</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Klik <strong>Guru &rarr; Siswa &rarr; Tambah Siswa</strong></p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Isi: username, password, nama lengkap, NISN, kelas, jenis kelamin, tahun lahir</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Klik <strong>"Simpan"</strong> — siswa otomatis ditetapkan ke guru yang login</p></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>6.3 Input Data Hafalan</h3>
+        <p>Melalui <strong>Guru &rarr; Data Hafalan &rarr; Tambah Hafalan</strong>:</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Field</th><th>Keterangan</th><th>Wajib?</th></tr></thead>
+          <tbody>
+            <tr><td>Siswa</td><td>Pilih siswa yang menyetorkan hafalan</td><td>✅</td></tr>
+            <tr><td>Nama Surah</td><td>Surah yang dihafalkan</td><td>✅</td></tr>
+            <tr><td>Jumlah Ayat</td><td>Ayat yang dihafalkan pada sesi ini</td><td>✅</td></tr>
+            <tr><td>Media Hafalan</td><td>Pilih dari daftar media tersedia</td><td>✅</td></tr>
+            <tr><td>Periode Semester</td><td>Contoh: 2025-1</td><td>✅</td></tr>
+          </tbody>
+        </table></div>
+        <div class="alert alert-info"><span class="alert-icon">📌</span>Untuk klasifikasi, sistem menghitung <strong>total surah unik</strong>, bukan total setoran hafalan.</div>
+      </div>
+
+      <div class="card">
+        <h3>6.4 Evaluasi Nilai Hafalan</h3>
+        <p>Buka detail hafalan &rarr; isi form evaluasi:</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Aspek</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>Kelancaran</td><td>Nilai kelancaran hafalan (0–100)</td></tr>
+            <tr><td>Tajwid</td><td>Nilai ketepatan tajwid (0–100)</td></tr>
+            <tr><td>Catatan</td><td>Komentar/catatan untuk siswa</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>6.5 Klasifikasi SVM Semester</h3>
+        <div class="alert alert-success"><span class="alert-icon">🤖</span><strong>Kapan?</strong> Setelah semua hafalan semester selesai diinput, guru melakukan klasifikasi untuk menentukan kelulusan siswa.</div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Buka <strong>Guru &rarr; Hasil Klasifikasi &rarr; Evaluasi Semester</strong></p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Pilih <strong>Siswa</strong> dan <strong>Periode Semester</strong> (contoh: <code>2025-1</code>)</p></div></div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <p>Klik <strong>"Evaluasi Semester"</strong>. Sistem akan:</p>
+              <ul class="feature-list">
+                <li><span class="fi">1️⃣</span> Ambil semua hafalan semester tersebut</li>
+                <li><span class="fi">2️⃣</span> Hitung total surah unik, modus media, usia siswa</li>
+                <li><span class="fi">3️⃣</span> Kirim ke skrip Python SVM</li>
+                <li><span class="fi">4️⃣</span> Simpan hasil prediksi ke database</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Hasil <strong>Lulus / Tidak Lulus</strong> dan confidence score tersimpan dan bisa dilihat di detail.</p></div></div>
+        </div>
+        <div class="alert alert-warning"><span class="alert-icon">⚠️</span>Klasifikasi ulang pada semester yang sama akan <strong>menimpa hasil sebelumnya</strong>.</div>
+      </div>
+
+      <div class="card">
+        <h3>6.6 Generate Laporan PDF</h3>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><p>Buka <strong>Guru &rarr; Laporan &rarr; Buat Laporan Baru</strong></p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><p>Pilih <strong>Siswa</strong>, isi <strong>Judul Laporan</strong> dan <strong>Periode</strong></p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><p>Klik <strong>"Generate Laporan"</strong> — PDF otomatis dibuat dan disimpan di server</p></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><p>Unduh kapan saja dari daftar laporan</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 7: SISWA -->
+    <div class="section" id="siswa-guide">
+      <div class="section-header">
+        <div class="section-icon">🧑‍🎓</div>
+        <div><div class="section-num">BAB 7</div><div class="section-title">Panduan Siswa</div></div>
+      </div>
+      <div class="card">
+        <h3>Fitur untuk Siswa</h3>
+        <div class="alert alert-info"><span class="alert-icon">ℹ️</span>Siswa hanya dapat melihat data <strong>milik sendiri</strong>. Tidak ada akses ke data siswa lain.</div>
+        <div class="card-row" style="margin-top:16px;">
+          <div>
+            <h4>📊 Dashboard Siswa</h4>
+            <ul class="feature-list">
+              <li><span class="fi">📖</span> Total hafalan dicatat</li>
+              <li><span class="fi">🏆</span> Kelas prediksi terakhir</li>
+              <li><span class="fi">📅</span> 5 hafalan terbaru</li>
+              <li><span class="fi">📈</span> Distribusi kelas prediksi</li>
+            </ul>
+          </div>
+          <div>
+            <h4>📂 Menu yang Tersedia</h4>
+            <ul class="feature-list">
+              <li><span class="fi">📚</span> <strong>Riwayat Hafalan</strong></li>
+              <li><span class="fi">🤖</span> <strong>Hasil Klasifikasi</strong></li>
+              <li><span class="fi">⭐</span> <strong>Nilai Evaluasi</strong></li>
+              <li><span class="fi">📄</span> <strong>Laporan PDF</strong></li>
+              <li><span class="fi">🎯</span> <strong>Media Hafalan</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Memahami Hasil Klasifikasi</h3>
+        <div class="card-row">
+          <div style="background:var(--green-50);border-radius:12px;padding:20px;text-align:center;">
+            <div style="font-size:40px;">✅</div>
+            <div style="font-size:18px;font-weight:800;color:var(--green-800);margin:8px 0;">LULUS</div>
+            <p style="font-size:13px;color:var(--gray-600);">Siswa memenuhi target hafalan &ge;30 surah unik pada semester ini.</p>
+          </div>
+          <div style="background:#fef2f2;border-radius:12px;padding:20px;text-align:center;">
+            <div style="font-size:40px;">❌</div>
+            <div style="font-size:18px;font-weight:800;color:#991b1b;margin:8px 0;">TIDAK LULUS</div>
+            <p style="font-size:13px;color:var(--gray-600);">Hafalan belum mencapai target. Perlu peningkatan semester berikutnya.</p>
+          </div>
+        </div>
+        <div class="alert alert-info" style="margin-top:16px;"><span class="alert-icon">💡</span><strong>Confidence Score</strong>: semakin mendekati 1.0, semakin yakin sistem dengan prediksinya.</div>
+      </div>
+    </div>
+
+    <!-- BAB 8: TEORI SVM -->
+    <div class="section" id="svm-teori">
+      <div class="section-header">
+        <div class="section-icon">🧠</div>
+        <div><div class="section-num">BAB 8</div><div class="section-title">Teori dan Algoritma SVM</div></div>
+      </div>
+
+      <div class="card">
+        <h3>8.1 Fitur Input (Variabel X)</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Fitur</th><th>Simbol</th><th>Sumber Data</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            <tr><td>Total Surah Unik</td><td>X₁</td><td>DataHafalan</td><td>Jumlah surah berbeda dalam satu semester (pengaruh dominan)</td></tr>
+            <tr><td>Usia Siswa</td><td>X₂</td><td>Profil Siswa</td><td>Usia dari tahun lahir (pengaruh sangat kecil)</td></tr>
+            <tr><td>ID Media</td><td>X₃</td><td>Modus Media</td><td>Media paling sering digunakan (modus)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>8.2 Formula Klasifikasi SVM Linear</h3>
+        <div class="formula">
+          <div class="lbl">FUNGSI KEPUTUSAN (DECISION FUNCTION)</div>
+          <div class="eq">f(x) = (W₁ × X₁) + (W₂ × X₂) + (W₃ × X₃) + b</div>
+          <div class="desc">
+            W₁ = 1.0 (bobot utama — total surah)<br>
+            W₂ = -0.01 (bobot kecil — usia)<br>
+            W₃ = 0.01 (bobot kecil — media)<br>
+            b  = -29.5 (bias/threshold)<br><br>
+            Jika f(x) &ge; 0 &rarr; <strong style="color:#4ade80;">LULUS</strong><br>
+            Jika f(x) &lt; 0 &rarr; <strong style="color:#f87171;">TIDAK LULUS</strong>
+          </div>
+        </div>
+        <div class="formula">
+          <div class="lbl">CONTOH PERHITUNGAN</div>
+          <div class="eq">Siswa: 32 surah, usia 12, media ID 2</div>
+          <div class="desc">
+            f(x) = (1.0 &times; 32) + (-0.01 &times; 12) + (0.01 &times; 2) + (-29.5)<br>
+            f(x) = 32 &minus; 0.12 + 0.02 &minus; 29.5 = <strong style="color:#fbbf24;">2.4</strong><br><br>
+            f(x) &ge; 0 &rarr; <strong style="color:#4ade80;">LULUS</strong><br>
+            Confidence = min(0.5 + 2.4/10, 0.99) = <strong style="color:#fbbf24;">0.74</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>8.3 Parameter Training SVM (Subgradient Descent)</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Parameter</th><th>Nilai</th><th>Fungsi</th></tr></thead>
+          <tbody>
+            <tr><td>Learning Rate (η)</td><td>0.01</td><td>Ukuran langkah update bobot</td></tr>
+            <tr><td>Lambda (λ)</td><td>0.001</td><td>Regularisasi L2 mencegah overfitting</td></tr>
+            <tr><td>Max Epoch</td><td>1000</td><td>Batas iterasi training</td></tr>
+            <tr><td>Tolerance</td><td>1×10⁻⁶</td><td>Ambang early stopping</td></tr>
+          </tbody>
+        </table></div>
+        <div class="formula">
+          <div class="lbl">FUNGSI LOSS (HINGE LOSS + L2)</div>
+          <div class="eq">L = (λ/2)||w||² + (1/n) Σ max(0, 1 − yᵢ·f(xᵢ))</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 9: ALUR -->
+    <div class="section" id="svm-alur">
+      <div class="section-header">
+        <div class="section-icon">🔄</div>
+        <div><div class="section-num">BAB 9</div><div class="section-title">Alur Proses Klasifikasi</div></div>
+      </div>
+      <div class="card">
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Input Hafalan oleh Guru</h4><p>Guru mencatat hafalan siswa (nama surah, jumlah ayat, media, periode semester).</p></div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Agregasi Data per Semester</h4><p>Sistem mengumpulkan semua hafalan siswa dan menghitung: total surah unik, modus media, usia siswa.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Eksekusi Python SVM</h4><div class="code-block">python svm_service/script_prediksi.py &lt;total_surah&gt; &lt;usia&gt; &lt;id_media&gt;</div></div></div>
+          <div class="step"><div class="step-num">4</div><div class="step-content"><h4>Prediksi dan Confidence</h4><p>Python menghitung f(x), menentukan kelas, dan confidence score. Output dikembalikan dalam JSON.</p></div></div>
+          <div class="step"><div class="step-num">5</div><div class="step-content"><h4>Simpan Hasil Klasifikasi</h4><p>Hasil (kelas, confidence, vector SVM, model aktif) disimpan ke tabel <code>hasil_klasifikasi</code>.</p></div></div>
+          <div class="step"><div class="step-num">6</div><div class="step-content"><h4>Tampilkan ke Guru &amp; Siswa</h4><p>Hasil dapat dilihat oleh guru dan siswa melalui menu Hasil Klasifikasi.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 10: DATA TRAINING -->
+    <div class="section" id="data-training">
+      <div class="section-header">
+        <div class="section-icon">📊</div>
+        <div><div class="section-num">BAB 10</div><div class="section-title">Manajemen Data Training</div></div>
+      </div>
+      <div class="card">
+        <h3>Format CSV untuk Import</h3>
+        <div class="code-block">fitur_total_surah,fitur_usia,id_media,label_kelas,sumber_data<br>30,12,1,Lulus,Data 2024<br>15,10,2,Tidak Lulus,Data 2024<br>35,14,1,Lulus,Data 2024</div>
+        <div class="alert alert-warning"><span class="alert-icon">⚠️</span><code>label_kelas</code> harus persis: <code>Lulus</code> atau <code>Tidak Lulus</code> (case-sensitive).</div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Kolom</th><th>Tipe</th><th>Range</th><th>Contoh</th></tr></thead>
+          <tbody>
+            <tr><td>fitur_total_surah</td><td>Integer</td><td>1 – 120</td><td>30</td></tr>
+            <tr><td>fitur_usia</td><td>Integer</td><td>1 – 100</td><td>12</td></tr>
+            <tr><td>id_media</td><td>Integer</td><td>ID valid</td><td>1</td></tr>
+            <tr><td>label_kelas</td><td>String</td><td>Lulus / Tidak Lulus</td><td>Lulus</td></tr>
+            <tr><td>sumber_data</td><td>String</td><td>Maks. 200 karakter</td><td>Angkatan 2024</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <!-- BAB 11: URL REFERENSI -->
+    <div class="section" id="url-ref">
+      <div class="section-header">
+        <div class="section-icon">🔗</div>
+        <div><div class="section-num">BAB 11</div><div class="section-title">Referensi URL dan Rute Sistem</div></div>
+      </div>
+      <div class="card">
+        <h3>Rute Admin (/admin/...)</h3>
+        <div class="cheat-grid">
+          <div class="cheat-item"><div class="label">Dashboard Admin</div><div class="url">/dashboard</div></div>
+          <div class="cheat-item"><div class="label">Manajemen User</div><div class="url">/admin/users</div></div>
+          <div class="cheat-item"><div class="label">Manajemen Guru</div><div class="url">/admin/guru</div></div>
+          <div class="cheat-item"><div class="label">Manajemen Siswa</div><div class="url">/admin/siswa</div></div>
+          <div class="cheat-item"><div class="label">Data Training SVM</div><div class="url">/admin/data-training</div></div>
+          <div class="cheat-item"><div class="label">Model SVM</div><div class="url">/admin/model-svm</div></div>
+          <div class="cheat-item"><div class="label">Log Evaluasi Model</div><div class="url">/admin/log-evaluasi</div></div>
+          <div class="cheat-item"><div class="label">Hasil Klasifikasi</div><div class="url">/admin/hasil-klasifikasi</div></div>
+          <div class="cheat-item"><div class="label">Media Hafalan</div><div class="url">/admin/media-hafalan</div></div>
+          <div class="cheat-item"><div class="label">Data Hafalan (view)</div><div class="url">/admin/hafalan</div></div>
+          <div class="cheat-item"><div class="label">Laporan</div><div class="url">/admin/laporan</div></div>
+          <div class="cheat-item"><div class="label">Perhitungan SVM</div><div class="url">/admin/perhitungan-svm</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Rute Guru (/guru/...)</h3>
+        <div class="cheat-grid">
+          <div class="cheat-item"><div class="label">Daftar Siswa</div><div class="url">/guru/siswa</div></div>
+          <div class="cheat-item"><div class="label">Tambah Siswa</div><div class="url">/guru/siswa/create</div></div>
+          <div class="cheat-item"><div class="label">Data Hafalan</div><div class="url">/guru/hafalan</div></div>
+          <div class="cheat-item"><div class="label">Tambah Hafalan</div><div class="url">/guru/hafalan/create</div></div>
+          <div class="cheat-item"><div class="label">Hasil Klasifikasi</div><div class="url">/guru/hasil-klasifikasi</div></div>
+          <div class="cheat-item"><div class="label">Evaluasi Semester</div><div class="url">POST /guru/hasil-klasifikasi/evaluasi-semester</div></div>
+          <div class="cheat-item"><div class="label">Laporan</div><div class="url">/guru/laporan</div></div>
+          <div class="cheat-item"><div class="label">Buat Laporan Baru</div><div class="url">/guru/laporan/create</div></div>
+          <div class="cheat-item"><div class="label">Perhitungan SVM</div><div class="url">/guru/perhitungan-svm</div></div>
+          <div class="cheat-item"><div class="label">Media Hafalan</div><div class="url">/guru/media-hafalan</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Rute Siswa (/siswa/...)</h3>
+        <div class="cheat-grid">
+          <div class="cheat-item"><div class="label">Riwayat Hafalan</div><div class="url">/siswa/hafalan</div></div>
+          <div class="cheat-item"><div class="label">Hasil Klasifikasi</div><div class="url">/siswa/hasil-klasifikasi</div></div>
+          <div class="cheat-item"><div class="label">Laporan Saya</div><div class="url">/siswa/laporan</div></div>
+          <div class="cheat-item"><div class="label">Media Hafalan</div><div class="url">/siswa/media-hafalan</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 12: FAQ -->
+    <div class="section" id="faq">
+      <div class="section-header">
+        <div class="section-icon">❓</div>
+        <div><div class="section-num">BAB 12</div><div class="section-title">Frequently Asked Questions (FAQ)</div></div>
+      </div>
+      <div class="card">
+        <div class="steps">
+          <div class="step">
+            <div class="step-num" style="background:var(--gold);">?</div>
+            <div class="step-content">
+              <h4>Mengapa siswa dengan 30 surah tidak selalu Lulus?</h4>
+              <p>Formula: <code>f(x) = (1.0 × 30) + (-0.01 × usia) + (0.01 × media) + (-29.5)</code>. Jika usia tinggi, bisa menghasilkan f(x) negatif meski kecil pengaruhnya. Pada umumnya 30 surah sudah cukup untuk Lulus.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" style="background:var(--gold);">?</div>
+            <div class="step-content">
+              <h4>Apakah surah sama bisa disetorkan lebih dari sekali?</h4>
+              <p>Ya. Namun untuk klasifikasi, sistem hanya menghitung <strong>jumlah surah unik</strong>, bukan total setoran.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" style="background:var(--gold);">?</div>
+            <div class="step-content">
+              <h4>Siapa yang bisa membuat laporan PDF?</h4>
+              <p>Hanya <strong>Admin</strong> dan <strong>Guru</strong>. Siswa hanya dapat melihat dan mengunduh laporan yang sudah dibuat.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" style="background:var(--gold);">?</div>
+            <div class="step-content">
+              <h4>Bagaimana cara mengubah password siswa?</h4>
+              <p>Guru (atau admin) dapat edit data siswa dan mengisi field <strong>"Password Baru"</strong> + <strong>"Konfirmasi Password"</strong>.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" style="background:var(--gold);">?</div>
+            <div class="step-content">
+              <h4>Apa perbedaan "Perhitungan SVM" dan "Hasil Klasifikasi"?</h4>
+              <p><strong>Perhitungan SVM</strong>: halaman detail proses training (bobot, loss, confusion matrix). <strong>Hasil Klasifikasi</strong>: prediksi aktual untuk setiap siswa berdasarkan data hafalan nyata.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BAB 13: TROUBLESHOOT -->
+    <div class="section" id="troubleshoot">
+      <div class="section-header">
+        <div class="section-icon">🔧</div>
+        <div><div class="section-num">BAB 13</div><div class="section-title">Troubleshoot &amp; Pemecahan Masalah</div></div>
+      </div>
+      <div class="card">
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Masalah</th><th>Kemungkinan Penyebab</th><th>Solusi</th></tr></thead>
+          <tbody>
+            <tr><td>Klasifikasi SVM gagal</td><td>Python tidak terinstall / path salah</td><td>Pastikan <code>PYTHON_PATH=python</code> di <code>.env</code>. Test: <code>python --version</code></td></tr>
+            <tr><td>Halaman tidak bisa diakses</td><td>Cache route lama</td><td><code>php artisan route:clear &amp;&amp; php artisan cache:clear</code></td></tr>
+            <tr><td>Error "Model SVM tidak ditemukan"</td><td>Tidak ada model SVM aktif</td><td>Admin &rarr; Model SVM &rarr; Tambah dan Aktifkan model</td></tr>
+            <tr><td>Import CSV gagal</td><td>Format kolom salah / file terlalu besar</td><td>Cek header CSV dan ukuran file &lt; 5MB. Pastikan encoding UTF-8</td></tr>
+            <tr><td>PDF tidak bisa diunduh</td><td>File dihapus dari storage</td><td>Cek folder <code>storage/app/laporan/</code>. Jalankan <code>php artisan storage:link</code></td></tr>
+            <tr><td>Siswa tidak muncul di guru</td><td>Siswa tidak ditugaskan ke guru tersebut</td><td>Admin edit data siswa dan ubah guru pengampu</td></tr>
+            <tr><td>Error 403 Forbidden</td><td>Akses di luar peran pengguna</td><td>Login dengan akun yang sesuai perannya</td></tr>
+            <tr><td>Asset CSS/JS tidak ter-load</td><td>Vite dev server tidak berjalan</td><td>Jalankan <code>npm run dev</code> di terminal terpisah</td></tr>
+          </tbody>
+        </table></div>
+        <div class="alert alert-info"><span class="alert-icon">🆘</span>Jika masalah berlanjut, periksa log Laravel di <code>storage/logs/laravel.log</code>.</div>
+        <h3>Perintah Artisan Berguna</h3>
+        <div class="code-block"><span class="comment"># Bersihkan semua cache</span><br>php artisan optimize:clear<br><br><span class="comment"># Migrasi ulang dengan seed</span><br>php artisan migrate:fresh --seed<br><br><span class="comment"># Buat symlink storage</span><br>php artisan storage:link<br><br><span class="comment"># Cek semua rute terdaftar</span><br>php artisan route:list<br><br><span class="comment"># Jalankan server</span><br>php artisan serve --host=0.0.0.0 --port=8000</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+    <div style="text-align:center;padding:20px 0 40px;color:var(--gray-400);font-size:13px;">
+      <div style="font-size:28px;margin-bottom:8px;">📖</div>
+      <div style="font-weight:700;color:var(--gray-700);font-size:15px;">Sistem Klasifikasi Hafalan Al-Qur'an Berbasis SVM</div>
+      <div style="margin-top:4px;">Manual Book v1.0 — © 2025</div>
+      <div style="font-family:'Amiri',serif;font-size:20px;color:var(--green-600);margin-top:16px;direction:rtl;">وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('[id]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

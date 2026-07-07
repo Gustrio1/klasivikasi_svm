@@ -6,7 +6,7 @@
 
 <x-page-header
     title="Analisis Evaluasi Model"
-    subtitle="Audit metrik performa mendalam dan Confusion Matrix untuk versi: {{ $logEvaluasiModel->modelSvm->versi_model }}."
+    subtitle="Audit metrik performa mendalam dan Confusion Matrix untuk versi: {{ $logEvaluasiModel->modelSvm?->versi_model ?? 'Model Tidak Ditemukan (Dihapus)' }}."
     :links="[
         ['label' => 'Dashboard', 'url' => route('dashboard')],
         ['label' => 'Log Evaluasi', 'url' => route('admin.log-evaluasi.index')],
@@ -56,7 +56,7 @@
                     </div>
                     <div>
                         <p class="text-[10px] font-black text-gray-400 uppercase">Waktu Evaluasi</p>
-                        <p class="text-sm font-bold text-gray-700">{{ $logEvaluasiModel->tanggal_evaluasi->format('d F Y - H:i') }} WIB</p>
+                        <p class="text-sm font-bold text-gray-700">{{ $logEvaluasiModel->tanggal_evaluasi?->format('d F Y - H:i') ?? '-' }} WIB</p>
                     </div>
                 </div>
             </div>

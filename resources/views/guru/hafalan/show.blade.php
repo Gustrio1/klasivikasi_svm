@@ -129,18 +129,55 @@
                     </div>
                 </div>
 
-                {{-- Catatan Guru jika ada --}}
-                @if($hafalan->nilaiEvaluasi?->catatan_guru)
-                    <div class="mt-5 bg-gray-50 rounded-xl p-4 border border-gray-100">
-                        <p class="text-xs font-bold text-gray-500 mb-2 uppercase tracking-wide">Catatan Guru:</p>
-                        <p class="text-sm text-gray-700 italic">"{{ $hafalan->nilaiEvaluasi->catatan_guru }}"</p>
+                {{-- Form Input / Catatan Evaluasi Guru --}}
+                @if($hafalan->nilaiEvaluasi)
+                    <div class="mt-5 border-t border-gray-100 pt-5" x-data="{ editing: false }">
+                        <div x-show="!editing">
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 mb-3">
+                                <p class="text-xs font-bold text-gray-500 mb-2 uppercase tracking-wide">Catatan Guru:</p>
+                                <p class="text-sm text-gray-700 italic">"{{ $hafalan->nilaiEvaluasi->catatan_guru }}"</p>
+                            </div>
+                            <button @click="editing = true" class="btn-secondary text-xs py-1.5 w-full flex items-center justify-center gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                                Edit Catatan
+                            </button>
+                        </div>
+                        <div x-show="editing" style="display: none;">
+                            <h4 class="text-sm font-bold text-gray-800 mb-3">Edit Catatan Evaluasi</h4>
+                            <form action="{{ route('guru.nilai-evaluasi.update', $hafalan->nilaiEvaluasi->id) }}" method="POST" class="space-y-4">
+                                @csrf
+                                @method('PUT')
+                                <div>
+                                    <label for="catatan_guru_edit" class="block text-xs font-semibold text-gray-500 uppercase mb-1">Catatan Bimbingan</label>
+                                    <textarea id="catatan_guru_edit" name="catatan_guru" rows="3" class="form-input w-full" required>{{ $hafalan->nilaiEvaluasi->catatan_guru }}</textarea>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button type="button" @click="editing = false" class="btn-secondary flex-1 py-2 text-sm">Batal</button>
+                                    <button type="submit" class="btn-primary bg-teal-600 hover:bg-teal-700 flex-1 py-2 text-sm">Perbarui</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                @else
+                    <div class="mt-5 border-t border-gray-100 pt-5">
+                        <h4 class="text-sm font-bold text-gray-800 mb-3">Beri Catatan Evaluasi</h4>
+                        <form action="{{ route('guru.nilai-evaluasi.store') }}" method="POST" class="space-y-4">
+                            @csrf
+                            <input type="hidden" name="id_hafalan" value="{{ $hafalan->id }}">
+                            <div>
+                                <label for="catatan_guru" class="block text-xs font-semibold text-gray-500 uppercase mb-1">Catatan Bimbingan</label>
+                                <textarea id="catatan_guru" name="catatan_guru" rows="3" class="form-input w-full" placeholder="Contoh: Bacaan tajwid sudah baik, tingkatkan kelancaran..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary bg-teal-600 hover:bg-teal-700 py-2.5 text-sm font-bold">Simpan Evaluasi</button>
+                        </form>
                     </div>
                 @endif
             </div>
         </div>
 
         {{-- KANAN: KLASIFIKASI SVM & REKOMENDASI (5 Kolom) --}}
-        <div class="lg:col-span-5 flex flex-col g            {{-- Card Info Evaluasi Semester --}}
+        <div class="lg:col-span-5 flex flex-col gap-6">
+            {{-- Card Info Evaluasi Semester --}}
             <div class="card p-0 overflow-hidden">
                 <div class="bg-indigo-700 p-5 text-white flex items-center justify-between">
                     <div>
