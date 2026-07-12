@@ -55,9 +55,10 @@
                             <input type="text" name="nama_lengkap" class="input-base" value="{{ old('nama_lengkap', $siswa->user->nama_lengkap) }}" required>
                         </div>
 
-                        <div class="p-4 bg-orange-50 rounded-xl border border-orange-100">
-                            <p class="text-[10px] text-orange-600 font-bold mb-2 italic">Ganti Password (Opsional)</p>
+                        <div class="p-4 bg-orange-50 rounded-xl border border-orange-100 space-y-3">
+                            <p class="text-[10px] text-orange-600 font-bold italic">Ganti Password (Opsional)</p>
                             <input type="password" name="password" class="input-base" placeholder="Password Baru">
+                            <input type="password" name="password_confirmation" class="input-base" placeholder="Konfirmasi Password Baru">
                         </div>
                     </div>
                 </div>
