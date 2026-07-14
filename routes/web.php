@@ -115,6 +115,7 @@ Route::middleware(['auth', 'role:guru'])
             Route::get('/{siswa}', [SiswaController::class , 'show'])->name('show');
             Route::get('/{siswa}/edit', [SiswaController::class , 'edit'])->name('edit');
             Route::put('/{siswa}', [SiswaController::class , 'update'])->name('update');
+            Route::delete('/{siswa}', [SiswaController::class , 'destroy'])->name('destroy');
         }
         );
 

@@ -211,7 +211,12 @@ class SiswaController extends Controller
             DB::transaction(function () use ($siswa) {
                 $user = $siswa->user;
 
-                // Hapus klasifikasi
+                // Hapus laporan siswa
+                foreach ($siswa->laporans as $laporan) {
+                    $laporan->delete();
+                }
+
+                // Hapus hasil klasifikasi
                 foreach ($siswa->hasilKlasifikasis as $hasil) {
                     $hasil->delete();
                 }

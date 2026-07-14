@@ -97,6 +97,20 @@
                             <div class="flex items-center justify-end gap-2 text-sm">
                                 <a href="{{ route('guru.siswa.show', $siswa->id) }}" class="btn-secondary py-1.5 px-3">Detail</a>
                                 <a href="{{ route('guru.hafalan.create', ['id_siswa' => $siswa->id]) }}" class="btn-primary py-1.5 px-3">Input Hafalan</a>
+                                <form action="{{ route('guru.siswa.destroy', $siswa->id) }}" method="POST" class="inline-block"
+                                    onsubmit="return confirm('Hapus siswa {{ $siswa->user->nama_lengkap }} beserta seluruh data hafalannya secara permanen? Tindakan ini tidak dapat dibatalkan.');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        class="inline-flex items-center gap-1 py-1.5 px-3 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 transition text-xs font-semibold"
+                                        title="Hapus Siswa">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                        </svg>
+                                        Hapus
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
