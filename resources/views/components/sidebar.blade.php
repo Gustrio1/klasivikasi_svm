@@ -102,10 +102,10 @@
                     </svg>
                 </button>
                 <div x-show="open" x-transition class="pl-8 mt-0.5 space-y-0.5">
-                    <a href="{{ route('admin.data-training.index') }}"
+                    <!-- <a href="{{ route('admin.data-training.index') }}"
                        class="{{ isActive('admin.data-training') ? 'nav-item-active' : 'nav-item' }} text-[13px]">
                         Data Training
-                    </a>
+                    </a> -->
                     <a href="{{ route('admin.model-svm.index') }}"
                        class="{{ isActive('admin.model-svm') ? 'nav-item-active' : 'nav-item' }} text-[13px]">
                         Model SVM
