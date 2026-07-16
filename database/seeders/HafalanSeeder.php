@@ -29,30 +29,29 @@ class HafalanSeeder extends Seeder
         }
 
         // ──────────────────────────────────────────────────────────
-        // 1. DATA TRAINING (10 record)
+        // 1. DATA TRAINING (10 record) — fitur baru: jumlah_ayat, usia, id_media
         // ──────────────────────────────────────────────────────────
         $trainingData = [
-            [0.90, 0.88, 0.92, 0.85, 'A'],
-            [0.85, 0.82, 0.87, 0.80, 'A'],
-            [0.70, 0.65, 0.68, 0.72, 'B'],
-            [0.72, 0.68, 0.70, 0.65, 'B'],
-            [0.60, 0.58, 0.62, 0.55, 'B'],
-            [0.45, 0.40, 0.42, 0.38, 'C'],
-            [0.50, 0.48, 0.50, 0.45, 'C'],
-            [0.35, 0.30, 0.38, 0.32, 'C'],
-            [0.95, 0.92, 0.94, 0.90, 'A'],
-            [0.55, 0.52, 0.58, 0.50, 'B'],
+            [22, 15, 'Lulus'],
+            [20, 16, 'Lulus'],
+            [15, 15, 'Lulus'],
+            [14, 16, 'Lulus'],
+            [13, 17, 'Lulus'],
+            [8,  15, 'Tidak Lulus'],
+            [9,  16, 'Tidak Lulus'],
+            [6,  17, 'Tidak Lulus'],
+            [24, 15, 'Lulus'],
+            [12, 16, 'Lulus'],
         ];
-        foreach ($trainingData as [$tajwid, $kelancaran, $makhraj, $fashohah, $label]) {
+        foreach ($trainingData as [$jumlahAyat, $usia, $label]) {
             DataTraining::create([
-                'fitur_tajwid'    => $tajwid,
-                'fitur_kelancaran' => $kelancaran,
-                'fitur_makhraj'   => $makhraj,
-                'fitur_fashohah'  => $fashohah,
-                'label_kelas'     => $label,
-                'sumber_data'     => 'seeder_dummy',
-                'is_valid'        => true,
-                'tanggal_input'   => now()->subDays(rand(30, 90)),
+                'fitur_total_surah' => $jumlahAyat,
+                'fitur_usia'        => $usia,
+                'id_media'          => null,
+                'label_kelas'       => $label,
+                'sumber_data'       => 'seeder_dummy',
+                'is_valid'          => true,
+                'tanggal_input'     => now()->subDays(rand(30, 90)),
             ]);
         }
         $this->command->info('  → 10 data training dibuat.');
@@ -77,21 +76,18 @@ class HafalanSeeder extends Seeder
         $mediaCetak = [
             [
                 'nama_media'        => 'Mushaf Tajwid Warna',
-                'kelas_target'      => 'C',
                 'deskripsi'         => 'Mushaf Al-Qur\'an dengan penanda tajwid berwarna untuk memudahkan pemula.',
                 'tips_belajar'      => 'Baca 1 halaman per hari dengan memperhatikan warna tajwid. Ulangi bacaan yang sulit dua kali.',
                 'alasan_rekomendasi' => 'Cocok untuk siswa yang masih perlu perbaikan dasar tajwid dan makhraj.',
             ],
             [
                 'nama_media'        => 'Buku Panduan Makhraj Huruf',
-                'kelas_target'      => 'B',
                 'deskripsi'         => 'Panduan lengkap makhraj 28 huruf hijaiyah disertai ilustrasi posisi lidah.',
                 'tips_belajar'      => 'Fokus pada huruf ح خ ع غ yang sering salah. Latih di depan cermin setiap hari.',
-                'alasan_rekomendasi' => 'Membantu siswa menyempurnakan makhraj huruf untuk naik ke kelas A.',
+                'alasan_rekomendasi' => 'Membantu siswa menyempurnakan makhraj huruf.',
             ],
             [
                 'nama_media'        => 'Juz Amma Terjemah',
-                'kelas_target'      => 'A',
                 'deskripsi'         => 'Juz Amma dilengkapi terjemah, asbabun nuzul, dan panduan hafalan per surah.',
                 'tips_belajar'      => 'Pahami makna setiap ayat sebelum menghafal. Ini akan memperkuat hafalan jangka panjang.',
                 'alasan_rekomendasi' => 'Untuk siswa berprestasi yang ingin memperdalam pemahaman makna hafalan.',
@@ -101,27 +97,21 @@ class HafalanSeeder extends Seeder
         $mediaDigital = [
             [
                 'nama_media'        => 'Video Tajwid Pemula (YouTube)',
-                'kelas_target'      => 'C',
                 'url_link'          => 'https://www.youtube.com/watch?v=example1',
-                'format_file'       => 'video/youtube',
                 'deskripsi'         => 'Serial video pembelajaran tajwid dari dasar untuk pemula, total 20 episode.',
                 'tips_belajar'      => 'Tonton sambil mengulang bacaan. Aktifkan subtitle untuk membantu pemahaman.',
                 'alasan_rekomendasi' => 'Media visual interaktif untuk siswa yang butuh bimbingan tajwid intensif.',
             ],
             [
                 'nama_media'        => 'Aplikasi Hafalan Qur\'an (Web)',
-                'kelas_target'      => 'B',
                 'url_link'          => 'https://quran.com',
-                'format_file'       => 'web-app',
                 'deskripsi'         => 'Platform web Quran.com dengan fitur audio, terjemah, dan mode hafalan.',
                 'tips_belajar'      => 'Gunakan fitur repeat ayat dan aktifkan mode Tafsir untuk pemahaman lebih dalam.',
                 'alasan_rekomendasi' => 'Mendukung latihan mandiri dengan umpan balik audio berkualitas tinggi.',
             ],
             [
                 'nama_media'        => 'Audio Murottal Syaikh Sudais',
-                'kelas_target'      => 'A',
                 'url_link'          => 'https://download.quranicaudio.com/example',
-                'format_file'       => 'audio/mp3',
                 'deskripsi'         => 'Murottal lengkap 30 juz oleh Syaikh Abdurrahman As-Sudais dengan kualitas HD.',
                 'tips_belajar'      => 'Dengarkan dan ikuti bacaan beliau. Perhatikan tempo dan nafas pada ayat panjang.',
                 'alasan_rekomendasi' => 'Referensi bacaan fasih level tinggi untuk siswa yang sudah menguasai dasar.',
@@ -170,6 +160,9 @@ class HafalanSeeder extends Seeder
                 'id_media'         => $mediaId,
                 'nama_surah'       => $surah,
                 'jumlah_ayat'      => $jmlAyat,
+                'periode_semester' => \Carbon\Carbon::parse($tgl)->month >= 7
+                    ? 'Ganjil ' . \Carbon\Carbon::parse($tgl)->year . '/' . (\Carbon\Carbon::parse($tgl)->year + 1)
+                    : 'Genap ' . (\Carbon\Carbon::parse($tgl)->year - 1) . '/' . \Carbon\Carbon::parse($tgl)->year,
                 'tanggal_input'    => $tgl,
             ]);
             $hafalanIds[] = $hf->id;
@@ -204,65 +197,30 @@ class HafalanSeeder extends Seeder
         // ──────────────────────────────────────────────────────────
         // Mapping kelas berdasarkan nilai rata-rata
         $hasilIds = [];
-        // Pemetaan sederhana ID Surat untuk fitur model 
-        $surahIdMap = ['Al-Fatihah' => 1, 'Al-Baqarah' => 2, 'Al-Ikhlas' => 112, 'Al-Falaq' => 113, 'An-Nas' => 114, 'Al-Kafirun' => 109, 'Al-Kautsar' => 108, 'Al-Maun' => 107];
-        
         foreach ($hafalanList as $idx => [$surah, $jmlAyat, $mediaId, $tgl]) {
-            // Prediksi dummy seeder berdasarkan class A,B,C acak karena fitur berubah drastis
-            $kelas = ['A', 'B', 'C'][rand(0, 2)];
+            $kelas      = rand(0, 1) ? 'Lulus' : 'Tidak Lulus';
             $confidence = round(rand(75, 97) / 100, 4);
-            $notif    = $idx < 6;
-
-            $vektor = [
-                'siswa'       => $siswa1->id,
-                'surah'       => $surahIdMap[$surah] ?? 1,
-                'jumlah_ayat' => $jmlAyat,
-                'id_media'    => $mediaId,
-            ];
+            $semester   = \Carbon\Carbon::parse($tgl)->month >= 7
+                ? 'Ganjil ' . \Carbon\Carbon::parse($tgl)->year . '/' . (\Carbon\Carbon::parse($tgl)->year + 1)
+                : 'Genap ' . (\Carbon\Carbon::parse($tgl)->year - 1) . '/' . \Carbon\Carbon::parse($tgl)->year;
 
             $hasil = HasilKlasifikasi::create([
-                'id_hafalan'          => $hafalanIds[$idx],
                 'id_siswa'            => $siswa1->id,
                 'id_model'            => $model->id,
+                'periode_semester'    => $semester,
+                'total_surah'         => 1,
                 'kelas_prediksi'      => $kelas,
                 'confidence_score'    => $confidence,
-                'media_input'         => json_encode($vektor),
-                'notifikasi_terkirim' => $notif,
+                'media_input'         => json_encode(['id_media' => $mediaId, 'jumlah_ayat' => $jmlAyat]),
+                'notifikasi_terkirim' => $idx < 6,
                 'tanggal_klasifikasi' => Carbon::parse($tgl)->addDays(2),
-                'vector_svm'          => $vektor,
+                'vector_svm'          => ['jumlah_ayat' => $jmlAyat, 'id_media' => $mediaId],
             ]);
             $hasilIds[$idx] = ['id' => $hasil->id, 'kelas' => $kelas];
         }
         $this->command->info('  → 8 hasil klasifikasi dibuat.');
 
-        // ──────────────────────────────────────────────────────────
-        // 7. REKOMENDASI SISWA
-        // Kelas A → media [2] cetak + [5] digital
-        // Kelas B → media [1] cetak + [4] digital
-        // Kelas C → media [0] cetak + [3] digital
-        // ──────────────────────────────────────────────────────────
-        $mediaMapping = [
-            'A' => [$mediaIds[2], $mediaIds[5]],
-            'B' => [$mediaIds[1], $mediaIds[4]],
-            'C' => [$mediaIds[0], $mediaIds[3]],
-        ];
-
-        $rekCounter = 0;
-        foreach ($hasilIds as $idx => $data) {
-            $pasangan = $mediaMapping[$data['kelas']];
-            foreach ($pasangan as $prio => $mediaId) {
-                $dilihat = $rekCounter < 10; // 10 pertama sudah dilihat
-                RekomendasiSiswa::create([
-                    'id_hasil'           => $data['id'],
-                    'id_media'           => $mediaId,
-                    'prioritas'          => $prio + 1,
-                    'dilihat_siswa'      => $dilihat,
-                    'tanggal_rekomendasi' => Carbon::parse($hafalanList[$idx][3])->addDays(2),
-                ]);
-                $rekCounter++;
-            }
-        }
-        $this->command->info("  → {$rekCounter} rekomendasi siswa dibuat.");
+        $this->command->info('  → Selesai membuat hasil klasifikasi.');
 
         // ──────────────────────────────────────────────────────────
         // 8. LOG EVALUASI MODEL (1 record)

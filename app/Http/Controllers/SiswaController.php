@@ -13,30 +13,64 @@ class SiswaController extends Controller
 
     /**
      * Admin: tampil semua siswa. Guru: hanya siswa yang diampu.
+     * Mendukung filter: search (nama/NISN), kelas, jenis_kelamin.
      */
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $user = auth()->user();
+            $user   = auth()->user();
+            $search = trim($request->input('search', ''));
+            $kelas  = $request->input('kelas', '');
+            $jk     = $request->input('jenis_kelamin', '');
 
-            if ($user->role === 'admin') {
-                $siswas = Siswa::with(['user', 'guru.user'])
-                    ->paginate(15);
+            // Base query sesuai role
+            $query = Siswa::with(['user', 'guru.user']);
+
+            if ($user->role === 'guru') {
+                $guru  = $user->guru;
+                $query->where('id_guru', $guru->id);
             }
-            else {
-                // Guru hanya melihat siswa dengan id_guru miliknya
-                $guru = $user->guru;
-                $siswas = Siswa::with(['user'])
-                    ->where('id_guru', $guru->id)
-                    ->paginate(15);
+
+            // Filter: nama atau NISN
+            if ($search !== '') {
+                $query->where(function ($q) use ($search) {
+                    $q->where('nisn', 'like', "%{$search}%")
+                      ->orWhereIn('id_user', function ($sub) use ($search) {
+                          $sub->select('id')
+                              ->from('tb_users')
+                              ->where('nama_lengkap', 'like', "%{$search}%");
+                      });
+                });
             }
+
+            // Filter: kelas
+            if (!empty($kelas)) {
+                $query->where('kelas', $kelas);
+            }
+
+            // Filter: jenis kelamin
+            if (!empty($jk)) {
+                $query->where('jenis_kelamin', $jk);
+            }
+
+            $siswas = $query->latest()->paginate(15)->withQueryString();
+
+            // Daftar kelas unik untuk dropdown
+            $kelasList = Siswa::when($user->role === 'guru', function ($q) use ($user) {
+                    $q->where('id_guru', $user->guru->id);
+                })
+                ->whereNotNull('kelas')
+                ->distinct()
+                ->orderBy('kelas')
+                ->pluck('kelas');
 
             $view = match ($user->role) {
-                    'admin' => 'admin.siswa.index',
-                    'guru' => 'guru.siswa.index',
-                    default => 'siswa.index',
-                };
-            return view($view, compact('siswas'));
+                'admin' => 'admin.siswa.index',
+                'guru'  => 'guru.siswa.index',
+                default => 'siswa.index',
+            };
+
+            return view($view, compact('siswas', 'kelasList'));
         }
         catch (\Exception $e) {
             return back()->with('error', 'Gagal memuat daftar siswa: ' . $e->getMessage());

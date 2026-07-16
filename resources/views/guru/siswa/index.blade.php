@@ -13,30 +13,96 @@
     ]"
 />
 
-<div class="mb-5 flex flex-col sm:flex-row justify-between items-center gap-4">
-    <div class="flex-1 w-full flex flex-col sm:flex-row gap-3">
-        {{-- Search & Filter --}}
-        <form method="GET" action="{{ route('guru.siswa.index') }}" class="flex w-full gap-2">
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama atau NISN..." class="form-input w-full sm:max-w-xs">
-            <select name="kelas" class="form-input w-full sm:max-w-xs">
-                <option value="">Semua Kelas</option>
-                <option value="VII-A" {{ request('kelas') == 'VII-A' ? 'selected' : '' }}>VII-A</option>
-                <option value="VII-B" {{ request('kelas') == 'VII-B' ? 'selected' : '' }}>VII-B</option>
-                <option value="VIII-A" {{ request('kelas') == 'VIII-A' ? 'selected' : '' }}>VIII-A</option>
-                <option value="IX-A" {{ request('kelas') == 'IX-A' ? 'selected' : '' }}>IX-A</option>
-            </select>
-            <button type="submit" class="btn-primary px-4">Cari</button>
-            @if(request('search') || request('kelas'))
-                <a href="{{ route('guru.siswa.index') }}" class="btn-secondary px-4">Reset</a>
-            @endif
-        </form>
-    </div>
-    <div>
-        <a href="{{ route('guru.siswa.create') }}" class="btn-primary flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-            Tambah Siswa
-        </a>
-    </div>
+{{-- ── Search & Filter Bar ───────────────────────────────────── --}}
+<div class="card mb-5 p-4">
+    <form method="GET" action="{{ route('guru.siswa.index') }}" id="form-search-guru-siswa">
+        <div class="flex flex-col sm:flex-row gap-3 items-end">
+
+            {{-- Search nama / NISN --}}
+            <div class="flex-1 min-w-0">
+                <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Cari Siswa</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+                        </svg>
+                    </span>
+                    <input
+                        type="text"
+                        name="search"
+                        id="search-input"
+                        value="{{ request('search') }}"
+                        placeholder="Nama lengkap atau NISN..."
+                        autocomplete="off"
+                        class="form-input pl-9 w-full"
+                    >
+                </div>
+            </div>
+
+            {{-- Filter Kelas (dinamis dari DB) --}}
+            <div class="w-full sm:w-44">
+                <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Kelas</label>
+                <select name="kelas" class="form-input w-full">
+                    <option value="">Semua Kelas</option>
+                    @foreach($kelasList as $k)
+                        <option value="{{ $k }}" {{ request('kelas') == $k ? 'selected' : '' }}>{{ $k }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            {{-- Filter Jenis Kelamin --}}
+            <div class="w-full sm:w-44">
+                <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Jenis Kelamin</label>
+                <select name="jenis_kelamin" class="form-input w-full">
+                    <option value="">Semua</option>
+                    <option value="L" {{ request('jenis_kelamin') == 'L' ? 'selected' : '' }}>Laki-laki</option>
+                    <option value="P" {{ request('jenis_kelamin') == 'P' ? 'selected' : '' }}>Perempuan</option>
+                </select>
+            </div>
+
+            {{-- Tombol --}}
+            <div class="flex gap-2 flex-shrink-0">
+                <button type="submit" class="btn-primary flex items-center gap-2 px-5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+                    </svg>
+                    Cari
+                </button>
+                @if(request('search') || request('kelas') || request('jenis_kelamin'))
+                    <a href="{{ route('guru.siswa.index') }}" class="btn-secondary flex items-center gap-1 px-4">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                        Reset
+                    </a>
+                @endif
+            </div>
+        </div>
+
+        {{-- Info hasil pencarian --}}
+        @if(request('search') || request('kelas') || request('jenis_kelamin'))
+            <div class="mt-3 flex items-center gap-2 text-sm text-teal-700 bg-teal-50 rounded-lg px-3 py-2">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+                </svg>
+                <span>
+                    Menampilkan <strong>{{ $siswas->total() }}</strong> siswa
+                    @if(request('search')) · Pencarian: <strong>"{{ request('search') }}"</strong> @endif
+                    @if(request('kelas')) · Kelas: <strong>{{ request('kelas') }}</strong> @endif
+                    @if(request('jenis_kelamin')) · {{ request('jenis_kelamin') === 'L' ? '♂ Laki-laki' : '♀ Perempuan' }} @endif
+                </span>
+            </div>
+        @endif
+    </form>
+</div>
+
+<div class="mb-4 flex justify-end">
+    <a href="{{ route('guru.siswa.create') }}" class="btn-primary flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        Tambah Siswa
+    </a>
 </div>
 
 <div class="card overflow-hidden">
@@ -118,9 +184,16 @@
                     <tr>
                         <td colspan="7">
                             <div class="py-16 text-center">
-                                <p class="text-5xl mb-3">👥</p>
-                                <p class="text-gray-500 font-medium font-semibold text-lg">Belum ada data siswa</p>
-                                <p class="text-gray-400 text-sm mt-1">Silakan tambah data siswa pertama bimbingan Anda.</p>
+                                @if(request('search') || request('kelas') || request('jenis_kelamin'))
+                                    <p class="text-5xl mb-3">🔍</p>
+                                    <p class="text-gray-500 font-medium font-semibold text-lg">Tidak ada siswa yang cocok</p>
+                                    <p class="text-gray-400 text-sm mt-1">Coba ubah kata kunci atau filter pencarian.</p>
+                                    <a href="{{ route('guru.siswa.index') }}" class="btn-secondary mt-4 inline-block">Reset Pencarian</a>
+                                @else
+                                    <p class="text-5xl mb-3">👥</p>
+                                    <p class="text-gray-500 font-medium font-semibold text-lg">Belum ada data siswa</p>
+                                    <p class="text-gray-400 text-sm mt-1">Silakan tambah data siswa pertama bimbingan Anda.</p>
+                                @endif
                             </div>
                         </td>
                     </tr>

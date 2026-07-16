@@ -12,13 +12,98 @@
         ['label' => 'Manajemen Siswa', 'url' => null],
     ]"
 >
-    {{-- Di route admin.siswa.create --}}
     <a href="{{ route('admin.siswa.create') }}" class="btn-primary flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         Tambah Siswa Baru
     </a>
 </x-page-header>
 
+{{-- ── Search & Filter Bar ───────────────────────────────────── --}}
+<div class="card mb-5 p-4">
+    <form method="GET" action="{{ route('admin.siswa.index') }}" id="form-search-siswa">
+        <div class="flex flex-col sm:flex-row gap-3 items-end">
+
+            {{-- Search nama / NISN --}}
+            <div class="flex-1 min-w-0">
+                <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Cari Siswa</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+                        </svg>
+                    </span>
+                    <input
+                        type="text"
+                        name="search"
+                        id="search-input"
+                        value="{{ request('search') }}"
+                        placeholder="Nama lengkap atau NISN..."
+                        autocomplete="off"
+                        class="form-input pl-9 w-full"
+                    >
+                </div>
+            </div>
+
+            {{-- Filter Kelas --}}
+            <div class="w-full sm:w-44">
+                <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Kelas</label>
+                <select name="kelas" class="form-input w-full">
+                    <option value="">Semua Kelas</option>
+                    @foreach($kelasList as $k)
+                        <option value="{{ $k }}" {{ request('kelas') == $k ? 'selected' : '' }}>{{ $k }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            {{-- Filter Jenis Kelamin --}}
+            <div class="w-full sm:w-44">
+                <label class="block text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Jenis Kelamin</label>
+                <select name="jenis_kelamin" class="form-input w-full">
+                    <option value="">Semua</option>
+                    <option value="L" {{ request('jenis_kelamin') == 'L' ? 'selected' : '' }}>Laki-laki</option>
+                    <option value="P" {{ request('jenis_kelamin') == 'P' ? 'selected' : '' }}>Perempuan</option>
+                </select>
+            </div>
+
+            {{-- Tombol --}}
+            <div class="flex gap-2 flex-shrink-0">
+                <button type="submit" class="btn-primary flex items-center gap-2 px-5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+                    </svg>
+                    Cari
+                </button>
+                @if(request('search') || request('kelas') || request('jenis_kelamin'))
+                    <a href="{{ route('admin.siswa.index') }}" class="btn-secondary flex items-center gap-1 px-4">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                        Reset
+                    </a>
+                @endif
+            </div>
+        </div>
+
+        {{-- Info hasil pencarian --}}
+        @if(request('search') || request('kelas') || request('jenis_kelamin'))
+            <div class="mt-3 flex items-center gap-2 text-sm text-indigo-700 bg-indigo-50 rounded-lg px-3 py-2">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+                </svg>
+                <span>
+                    Menampilkan <strong>{{ $siswas->total() }}</strong> siswa
+                    @if(request('search')) · Pencarian: <strong>"{{ request('search') }}"</strong> @endif
+                    @if(request('kelas')) · Kelas: <strong>{{ request('kelas') }}</strong> @endif
+                    @if(request('jenis_kelamin')) · {{ request('jenis_kelamin') === 'L' ? '♂ Laki-laki' : '♀ Perempuan' }} @endif
+                </span>
+            </div>
+        @endif
+    </form>
+</div>
+
+{{-- ── Tabel Data Siswa ──────────────────────────────────────── --}}
 <div class="card p-0 overflow-hidden">
     <div class="overflow-x-auto">
         <table class="table-base w-full">
@@ -40,10 +125,40 @@
                             {{ $siswas->firstItem() + $loop->index }}
                         </td>
                         <td class="table-td">
-                            <div class="font-bold text-gray-800">{{ $siswa->user->nama_lengkap }}</div>
+                            <div class="flex items-center gap-3">
+                                @php
+                                    $initials = collect(explode(' ', $siswa->user->nama_lengkap ?? 'S'))
+                                        ->take(2)->map(fn($w) => strtoupper($w[0]))->implode('');
+                                @endphp
+                                <div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-sm flex-shrink-0">
+                                    {{ $initials }}
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">
+                                        @if(request('search'))
+                                            {!! str_ireplace(
+                                                request('search'),
+                                                '<mark class="bg-yellow-200 text-yellow-900 rounded px-0.5">'.e(request('search')).'</mark>',
+                                                e($siswa->user->nama_lengkap)
+                                            ) !!}
+                                        @else
+                                            {{ $siswa->user->nama_lengkap }}
+                                        @endif
+                                    </div>
+                                    <div class="text-xs text-gray-400">{{ $siswa->jenis_kelamin === 'L' ? 'Laki-laki' : 'Perempuan' }}</div>
+                                </div>
+                            </div>
                         </td>
                         <td class="table-td text-center font-mono text-sm text-gray-600">
-                            {{ $siswa->nisn ?? '-' }}
+                            @if(request('search') && $siswa->nisn)
+                                {!! str_ireplace(
+                                    request('search'),
+                                    '<mark class="bg-yellow-200 text-yellow-900 rounded px-0.5">'.e(request('search')).'</mark>',
+                                    e($siswa->nisn)
+                                ) !!}
+                            @else
+                                {{ $siswa->nisn ?? '-' }}
+                            @endif
                         </td>
                         <td class="table-td text-center">
                             <span class="px-2 py-1 bg-teal-100 text-teal-700 text-xs font-bold rounded">{{ $siswa->kelas ?? '-' }}</span>
@@ -67,7 +182,8 @@
                                 <a href="{{ route('admin.siswa.edit', $siswa->id) }}" class="p-1.5 text-amber-500 hover:bg-amber-50 rounded-lg transition" title="Edit">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                                 </a>
-                                <form action="{{ route('admin.siswa.destroy', $siswa->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Hapus siswa {{ $siswa->user->nama_lengkap }} beserta seluruh data hafalannya secara permanen?');">
+                                <form action="{{ route('admin.siswa.destroy', $siswa->id) }}" method="POST" class="inline-block"
+                                    onsubmit="return confirm('Hapus siswa {{ $siswa->user->nama_lengkap }} beserta seluruh data hafalannya secara permanen?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="p-1.5 text-red-500 hover:bg-red-50 rounded-lg transition" title="Hapus">
@@ -79,7 +195,17 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7" class="py-12 text-center text-gray-400">Belum ada data siswa.</td>
+                        <td colspan="7" class="py-16 text-center">
+                            @if(request('search') || request('kelas') || request('jenis_kelamin'))
+                                <p class="text-4xl mb-3">🔍</p>
+                                <p class="text-gray-500 font-semibold">Tidak ada siswa yang cocok</p>
+                                <p class="text-gray-400 text-sm mt-1">Coba ubah kata kunci atau filter pencarian.</p>
+                                <a href="{{ route('admin.siswa.index') }}" class="btn-secondary mt-4 inline-block">Reset Pencarian</a>
+                            @else
+                                <p class="text-4xl mb-3">👥</p>
+                                <p class="text-gray-500 font-semibold">Belum ada data siswa</p>
+                            @endif
+                        </td>
                     </tr>
                 @endforelse
             </tbody>

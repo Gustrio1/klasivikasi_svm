@@ -122,42 +122,37 @@ class HasilKlasifikasiController extends Controller
                             ->where('periode_semester', $periode)
                             ->delete();
 
-            // 1. Ambil model SVM aktif
+            // Hitung total setoran hafalan di semester ini (untuk fitur)
+            $totalSetoranSemester = $hafalans->count();
+            
+            // Hitung total setoran KESELURUHAN (semua semester) untuk syarat kelulusan >= 32
+            $totalSetoranSemuaSemester = DataHafalan::where('id_siswa', $id_siswa)->count();
+
+            // 1. Ambil model SVM aktif (hanya untuk relasi foreign key)
             $model = ModelSvm::where('is_active', true)->firstOrFail();
 
             // 2. Bangun vector fitur
             $fitur = [
-                'total_surah' => $totalSurah,
-                'usia' => $usia,
-                'id_media' => $modusMedia,
+                'total_surah'   => $totalSurah,
+                'usia'          => $usia,
+                'id_media'      => $modusMedia,
+                'total_setoran_semester' => $totalSetoranSemester,
+                'total_setoran_keseluruhan' => $totalSetoranSemuaSemester,
             ];
 
-            // 3. Eksekusi script Python SVM via CLI
-            $pythonPath = env('PYTHON_PATH', 'python'); 
-            $scriptPath = base_path('svm_service/script_prediksi.py');
+            // 3. Ganti perhitungan SVM dengan Aturan Hardcode sesuai permintaan:
+            // Jika >= 32 kali setoran hafalan (secara total keseluruhan) maka Lulus, jika kurang Tidak Lulus
+            if ($totalSetoranSemuaSemester >= 32) {
+                $prediksi = 'Lulus';
+            } else {
+                $prediksi = 'Tidak Lulus';
+            }
 
-            // Susun Argumen sesuai urutan: total_surah, usia, id_media
-            $args = [
-                $pythonPath,
-                $scriptPath,
-                $fitur['total_surah'],
-                $fitur['usia'],
-                $fitur['id_media']
+            $hasil = [
+                'prediction' => $prediksi,
+                'confidence' => 100.0, // Hardcode rule = 100% yakin
+                'fitur'      => $fitur
             ];
-
-            $process = new \Symfony\Component\Process\Process($args);
-            $process->run();
-
-            if (!$process->isSuccessful()) {
-                throw new \Exception('Skrip AI gagal dieksekusi: ' . $process->getErrorOutput());
-            }
-
-            $output = $process->getOutput();
-            $hasil = json_decode(trim($output), true);
-
-            if (!$hasil || !isset($hasil['prediction'])) {
-                throw new \Exception('Respons Python bukan JSON yang valid: ' . $output);
-            }
 
             // 4. Simpan hasil klasifikasi semester
             $hasilKlasifikasi = DB::transaction(function () use ($siswa, $periode, $model, $fitur, $hasil, $totalSurah) {

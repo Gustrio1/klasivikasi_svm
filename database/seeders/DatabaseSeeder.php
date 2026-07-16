@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,18 +18,27 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         // Truncate semua tabel terkait (urutan dari anak ke induk)
-        DB::table('tb_rekomendasi_siswa')->truncate();
-        DB::table('tb_hasil_klasifikasi')->truncate();
-        DB::table('tb_nilai_evaluasi')->truncate();
-        DB::table('tb_data_hafalan')->truncate();
-        DB::table('tb_log_evaluasi_model')->truncate();
-        DB::table('tb_media_hafalan')->truncate();
-        DB::table('tb_model_svm')->truncate();
-        DB::table('tb_data_training')->truncate();
-        DB::table('tb_laporan')->truncate();
-        DB::table('tb_siswa')->truncate();
-        DB::table('tb_guru')->truncate();
-        DB::table('tb_users')->truncate();
+        // Menggunakan raw TRUNCATE IF EXISTS agar aman saat fresh migration
+        $tables = [
+            'tb_rekomendasi_siswa',
+            'tb_hasil_klasifikasi',
+            'tb_nilai_evaluasi',
+            'tb_data_hafalan',
+            'tb_log_evaluasi_model',
+            'tb_media_hafalan',
+            'tb_model_svm',
+            'tb_data_training',
+            'tb_laporan',
+            'tb_siswa',
+            'tb_guru',
+            'tb_users',
+        ];
+
+        foreach ($tables as $table) {
+            if (Schema::hasTable($table)) {
+                DB::statement("TRUNCATE TABLE `{$table}`");
+            }
+        }
 
         // Aktifkan kembali FK check
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
@@ -38,7 +48,7 @@ class DatabaseSeeder extends Seeder
             HafalanSeeder::class,           // data_training, model_svm, media_hafalan,
                                             // data_hafalan, nilai_evaluasi,
                                             // hasil_klasifikasi, log_evaluasi_model
-            SiswaRealSeeder::class,         // 188 siswa real dari CSV + data hafalan massal + nilai + training
+            SiswaRealSeeder::class,         // 35 siswa real dari data_siswa_fix.csv
         ]);
 
         $this->command->newLine();
