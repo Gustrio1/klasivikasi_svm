@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
             HafalanSeeder::class,           // data_training, model_svm, media_hafalan,
                                             // data_hafalan, nilai_evaluasi,
                                             // hasil_klasifikasi, log_evaluasi_model
-            SiswaRealSeeder::class,         // 35 siswa real dari data_siswa_fix.csv
+            DataSiswaBaruSeeder::class,     // 35 siswa baru dari JSON
         ]);
 
         $this->command->newLine();
