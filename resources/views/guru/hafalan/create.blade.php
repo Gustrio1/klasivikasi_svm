@@ -65,28 +65,17 @@
             {{-- Nama Surah --}}
             <div>
                 <label for="nama_surah" class="form-label">Nama Surah <span class="text-red-500">*</span></label>
-                <input type="text" list="surah_list" name="nama_surah" id="nama_surah" class="form-input @error('nama_surah') border-red-500 @enderror" value="{{ old('nama_surah') }}" required placeholder="Ketik atau pilih nama surah..." autocomplete="off">
-                <datalist id="surah_list">
-                    @php
-                        $surahs = [
-                            'Al-Fatihah','Al-Baqarah','Ali \'Imran','An-Nisa\'','Al-Ma\'idah','Al-An\'am','Al-A\'raf','Al-Anfal','At-Taubah','Yunus',
-                            'Hud','Yusuf','Ar-Ra\'d','Ibrahim','Hijr','An-Nahl','An-Nahl','Al-Isra\'','Al-Kahf','Maryam','Ta Ha',
-                            'Al-Anbiya\'','Al-Hajj','Al-Mu\'minun','An-Nur','Al-Furqan','Al-Furqan','Ash-Shu\'ara\'','An-Naml','Al-Qasas','Al-\'Ankabut',
-                            'Ar-Rum','Luqman','As-Sajdah','Al-Ahzab','Saba\'','Fatir','Yasin','As-Saffat','Sad','Zumar',
-                            'Ghafir','Fussilat','Shura','Az-Zukhruf','Ad-Dukhan','Al-Jathiyah','Al-Ahqaf','Muhammad','Qaf',
-                            'Ad-Dhariyat','At-Tur','An-Najm','Al-Qamar','Al-Qamar','Ar-Rahman','Al-Waqi\'ah','Al-Hadid','Al-Mujadila','Al-Hashr',
-                            'Al-Mumtahanah','As-Saff','Al-Jumu\'ah','Al-Munafiqun','At-Taghabun','At-Talaq','At-Tahrim','Al-Mulk','Al-Haqqah','Al-Ma\'arij',
-                            'Nuh','Al-Jinn','Al-Muzzammil','Al-Muddaththir','Al-Qiyamah','Al-Insan','Al-Mursalat','An-Naba\'','An-Nazi\'at','Abasa',
-                            'At-Takwir','Al-Infitar','Al-Mutaffifin','Al-Inshiqaq','Al-Buruj','At-Tariq','Al-A\'la','Al-Ghashiyah','Al-Fajr','Al-Balad',
-                            'Ash-Shams','Al-Lail','Ad-Duha','Al-Inshirah','At-Tin','Al-\'Alaq','Al-Qadr','Al-Bayyinah','Al-Zilzal','Al-\'Adiyat',
-                            'Al-Qari\'ah','At-Takathur','Al-\'Asr','Al-Humazah','Al-Fil','Quraish','Al-Ma\'un','Al-Kauthar','Al-Kafirun','An-Nasr',
-                            'Al-Masad','Al-Ikhlas','Al-Falaq','An-Nas'
-                        ];
-                    @endphp
-                    @foreach(array_unique($surahs) as $surah)
-                        <option value="{{ $surah }}">
+                <select name="nama_surah" id="nama_surah"
+                        class="form-input @error('nama_surah') border-red-500 @enderror" required>
+                    <option value="">-- Pilih Nama Surah --</option>
+                    @foreach($masterSurahs as $ms)
+                        <option value="{{ $ms->nama_surah }}"
+                            {{ old('nama_surah') == $ms->nama_surah ? 'selected' : '' }}>
+                            {{ $ms->nama_surah }} ({{ $ms->jumlah_ayat }})
+                        </option>
                     @endforeach
-                </datalist>
+                </select>
+                <p class="text-xs text-gray-400 mt-1 italic">Pilih surat yang disetorkan siswa.</p>
                 @error('nama_surah') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
             </div>
 

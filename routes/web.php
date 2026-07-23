@@ -19,6 +19,7 @@ use App\Http\Controllers\ModelSvmController;
 use App\Http\Controllers\LogEvaluasiModelController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SvmPerhitunganController;
+use App\Http\Controllers\MasterSurahController;
 
 // =============================================================================
 // REDIRECT ROOT
@@ -97,6 +98,12 @@ Route::middleware(['auth', 'role:admin'])
         // ── Perhitungan SVM ───────────────────────────────────────────────────
         Route::get('perhitungan-svm', [SvmPerhitunganController::class, 'index'])
             ->name('perhitungan-svm.index');
+
+        // ── Master Surat ──────────────────────────────────────────────────────
+        Route::patch('master-surah/{masterSurah}/toggle', [MasterSurahController::class, 'toggle'])
+            ->name('master-surah.toggle');
+        Route::resource('master-surah', MasterSurahController::class)
+            ->except(['destroy']);
     });
 
 // =============================================================================

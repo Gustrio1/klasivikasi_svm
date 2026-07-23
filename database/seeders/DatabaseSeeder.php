@@ -44,11 +44,12 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         $this->call([
-            UserSeeder::class,              // users, guru, siswa
-            HafalanSeeder::class,           // data_training, model_svm, media_hafalan,
-                                            // data_hafalan, nilai_evaluasi,
-                                            // hasil_klasifikasi, log_evaluasi_model
-            DataSiswaBaruSeeder::class,     // 35 siswa baru dari JSON
+            MasterSurahSeeder::class,           // 37 surat Juz 30
+            UserSeeder::class,                  // users, guru, siswa
+            HafalanSeeder::class,               // data_training, model_svm, media_hafalan,
+                                                // data_hafalan, nilai_evaluasi,
+                                                // hasil_klasifikasi, log_evaluasi_model
+            DataSiswaBaruSeeder::class,         // 35 siswa baru dari JSON
         ]);
 
         $this->command->newLine();

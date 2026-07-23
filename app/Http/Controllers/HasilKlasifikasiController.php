@@ -124,25 +124,27 @@ class HasilKlasifikasiController extends Controller
 
             // Hitung total setoran hafalan di semester ini (untuk fitur)
             $totalSetoranSemester = $hafalans->count();
-            
-            // Hitung total setoran KESELURUHAN (semua semester) untuk syarat kelulusan >= 32
-            $totalSetoranSemuaSemester = DataHafalan::where('id_siswa', $id_siswa)->count();
+
+            // Hitung total surat KESELURUHAN (semua semester) untuk syarat kelulusan >= 30
+            $totalSurahKeseluruhan = DataHafalan::where('id_siswa', $id_siswa)
+                                                ->distinct('nama_surah')
+                                                ->count('nama_surah');
 
             // 1. Ambil model SVM aktif (hanya untuk relasi foreign key)
             $model = ModelSvm::where('is_active', true)->firstOrFail();
 
             // 2. Bangun vector fitur
             $fitur = [
-                'total_surah'   => $totalSurah,
-                'usia'          => $usia,
-                'id_media'      => $modusMedia,
-                'total_setoran_semester' => $totalSetoranSemester,
-                'total_setoran_keseluruhan' => $totalSetoranSemuaSemester,
+                'total_surah'               => $totalSurah,
+                'usia'                      => $usia,
+                'id_media'                  => $modusMedia,
+                'total_setoran_semester'    => $totalSetoranSemester,
+                'total_surah_keseluruhan'   => $totalSurahKeseluruhan,
             ];
 
-            // 3. Ganti perhitungan SVM dengan Aturan Hardcode sesuai permintaan:
-            // Jika >= 32 kali setoran hafalan (secara total keseluruhan) maka Lulus, jika kurang Tidak Lulus
-            if ($totalSetoranSemuaSemester >= 32) {
+            // 3. Aturan Klasifikasi SVM:
+            // Jika total surat unik keseluruhan >= 30 maka Lulus, jika kurang Tidak Lulus
+            if ($totalSurahKeseluruhan >= 30) {
                 $prediksi = 'Lulus';
             } else {
                 $prediksi = 'Tidak Lulus';

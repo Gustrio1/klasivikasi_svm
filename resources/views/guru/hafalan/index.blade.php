@@ -76,16 +76,7 @@
                         <td class="table-td">
                             <span class="font-bold text-teal-700">{{ $item->nama_surah }}</span>
                             <br>
-                            @php
-                                $ayatLabel = match((int)$item->jumlah_ayat) {
-                                    1 => '1-3 Ayat',
-                                    2 => '4-6 Ayat',
-                                    3 => '7-10 Ayat',
-                                    4 => '>10 Ayat',
-                                    default => $item->jumlah_ayat . ' Ayat (Lama)'
-                                };
-                            @endphp
-                            <span class="text-xs text-gray-500">Rentang: {{ $ayatLabel }}</span>
+                            <span class="text-xs text-gray-500">{{ $item->jumlah_ayat }} Ayat</span>
                         </td>
                         <td class="table-td text-center text-sm text-gray-600">
                             {{ \Carbon\Carbon::parse($item->tanggal_input)->translatedFormat('d M Y') }}

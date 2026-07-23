@@ -40,17 +40,8 @@
                     </p>
                     <div class="flex items-center gap-3">
                         <h2 class="text-3xl font-black text-white">{{ $hafalan->nama_surah }}</h2>
-                        @php
-                            $ayatLabel = match ((int) $hafalan->jumlah_ayat) {
-                                1 => '1-3 Ayat',
-                                2 => '4-6 Ayat',
-                                3 => '7-10 Ayat',
-                                4 => '>10 Ayat',
-                                default => $hafalan->jumlah_ayat . ' Ayat (Lama)'
-                            };
-                        @endphp
-                        <span class="px-2.5 py-1 bg-teal-800/80 rounded-lg text-sm border border-teal-600">Rentang
-                            {{ $ayatLabel }}</span>
+                        <span class="px-2.5 py-1 bg-teal-800/80 rounded-lg text-sm border border-teal-600">
+                            {{ $hafalan->jumlah_ayat }} Ayat</span>
                     </div>
 
                     <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-teal-100">

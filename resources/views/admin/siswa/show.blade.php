@@ -70,6 +70,7 @@
         @php
             $hafalans = $siswa->dataHafalans;
             $totalHafalan = $hafalans->count();
+            $totalSurat   = $hafalans->unique('nama_surah')->count();
             $totalAyat = $hafalans->sum('jumlah_ayat');
             $kelasTerakhir = $hasilTerakhir ? strtoupper($hasilTerakhir->kelas_prediksi) : '-';
             $laporans = \App\Models\Laporan::where('id_siswa', $siswa->id)->latest('tanggal_cetak')->get();
@@ -77,8 +78,8 @@
         @endphp
 
         <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col justify-center items-center text-center">
-            <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-1">Total Hafalan</p>
-            <p class="text-2xl font-bold text-gray-800">{{ $totalHafalan }}</p>
+            <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-1">Total Surat</p>
+            <p class="text-2xl font-bold text-gray-800">{{ $totalSurat }}</p>
         </div>
         
         <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 flex flex-col justify-center items-center text-center">

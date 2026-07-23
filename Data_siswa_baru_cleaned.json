@@ -8,13 +8,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -165,56 +165,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -227,23 +177,23 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah, Al-Qadr",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -252,13 +202,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
+                "surat": "Adh-Dhuha, Al-Lail",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -282,8 +232,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-A'la",
-                "ayat": 19
+                "surat": "Al-A'la, Ath-Thariq",
+                "ayat": 36
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -349,91 +299,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Lail",
-                "ayat": 21
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Ath-Thariq",
-                "ayat": 17
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -446,28 +311,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -476,8 +341,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -491,18 +356,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -516,13 +381,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -536,8 +401,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -566,8 +431,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Abasa",
-                "ayat": 7
+                "surat": "Abasa, An-Nazi'at",
+                "ayat": 22
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -598,116 +463,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "An-Naba'",
                 "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "An-Nazi'at",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -720,23 +475,23 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -877,66 +632,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -949,23 +644,23 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah, Al-Qadr",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -974,8 +669,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -989,8 +684,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1004,18 +699,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Ath-Thariq",
-                "ayat": 17
+                "surat": "Ath-Thariq, Al-Buruj",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 33
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1024,8 +719,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1066,111 +761,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Muthaffifin",
-                "ayat": 18
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -1183,28 +773,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1213,8 +803,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1228,18 +818,18 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1253,13 +843,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1273,8 +863,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1315,111 +905,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -1432,13 +917,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1447,13 +932,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
+                "surat": "Al-Qari'ah, Al-'Adiyat",
+                "ayat": 22
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah, Al-Qadr",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1462,23 +947,23 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Lail",
-                "ayat": 21
+                "surat": "Al-Lail, Asy-Syams",
+                "ayat": 36
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1497,8 +982,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 22
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1517,8 +1002,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1554,106 +1039,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "An-Naba'",
                 "ayat": 40
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syams",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -1666,28 +1051,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1696,8 +1081,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1711,18 +1096,18 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1736,13 +1121,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1756,8 +1141,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1798,111 +1183,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -1915,38 +1195,38 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
+                "surat": "Al-Qadr, Al-'Alaq",
+                "ayat": 24
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
+                "surat": "Adh-Dhuha, Al-Lail",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -1955,18 +1235,18 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syams",
-                "ayat": 15
+                "surat": "Asy-Syams, Al-Balad",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 10
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -1990,13 +1270,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -2047,111 +1327,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Lail",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Muthaffifin",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -2164,13 +1339,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -2321,56 +1496,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -2383,23 +1508,23 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -2408,13 +1533,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
+                "surat": "Al-Qadr, Al-'Alaq",
+                "ayat": 24
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -2520,76 +1645,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -2602,18 +1657,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -2754,61 +1809,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -2821,13 +1821,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -2978,56 +1978,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -3040,23 +1990,23 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3065,13 +2015,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
+                "surat": "Al-Qadr, Al-'Alaq",
+                "ayat": 24
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -3177,76 +2127,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -3259,18 +2139,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3406,66 +2286,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -3478,13 +2298,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3493,18 +2313,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
+                "surat": "Al-Qari'ah, Al-'Adiyat",
+                "ayat": 22
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah, Al-Qadr",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
+                "surat": "Al-'Alaq, At-Tin, Asy-Syarh",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -3523,18 +2343,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3548,13 +2368,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -3568,8 +2388,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3610,111 +2430,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -3727,28 +2442,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3757,8 +2472,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -3772,18 +2487,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3797,13 +2512,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -3817,8 +2532,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3859,111 +2574,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -3976,18 +2586,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -3996,8 +2606,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -4006,8 +2616,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -4051,13 +2661,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4113,86 +2723,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Muthaffifin",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -4205,18 +2735,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4225,8 +2755,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4235,8 +2765,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -4250,18 +2780,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4275,13 +2805,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -4295,8 +2825,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4337,111 +2867,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -4454,13 +2879,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4469,18 +2894,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
+                "surat": "Al-Qari'ah, Al-'Adiyat",
+                "ayat": 22
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah, Al-Qadr",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
+                "surat": "Al-'Alaq, At-Tin, Asy-Syarh",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -4499,18 +2924,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4524,13 +2949,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -4544,8 +2969,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4581,111 +3006,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -4698,18 +3018,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -4845,66 +3165,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -4917,18 +3177,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -5069,61 +3329,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -5136,13 +3341,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -5153,11 +3358,6 @@
                 "media": "Al-Qur'an Cetak",
                 "surat": "Al-Qari'ah",
                 "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-'adiyat",
-                "ayat": 0
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -5293,56 +3493,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -5355,28 +3505,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -5385,8 +3535,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -5400,18 +3550,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -5425,13 +3575,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -5445,8 +3595,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -5487,111 +3637,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -5604,38 +3649,38 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
+            },
+            {
+                "media": "Al-Qur'an Cetak",
+                "surat": "Az-Zalzalah, Al-Bayyinah",
                 "ayat": 8
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 0
+                "surat": "Al-Qadr, Al-'Alaq",
+                "ayat": 24
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
+                "surat": "Adh-Dhuha, Al-Lail",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -5644,18 +3689,18 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syams",
-                "ayat": 15
+                "surat": "Asy-Syams, Al-Balad",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 10
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -5679,13 +3724,13 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 25
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -5736,111 +3781,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Lail",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Muthaffifin",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -5853,23 +3793,23 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6000,66 +3940,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -6072,28 +3952,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -6102,8 +3982,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh",
+                "ayat": 16
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6219,76 +4099,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -6301,13 +4111,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -6316,18 +4126,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
+                "surat": "Al-Qari'ah, Al-'Adiyat",
+                "ayat": 22
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
+                "surat": "Az-Zalzalah, Al-Bayyinah, Al-Qadr",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Alaq",
-                "ayat": 19
+                "surat": "Al-'Alaq, At-Tin, Asy-Syarh",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6346,18 +4156,18 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6371,13 +4181,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6391,8 +4201,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6428,111 +4238,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Tin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -6545,18 +4250,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -6697,61 +4402,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -6764,28 +4414,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -6794,8 +4444,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6809,18 +4459,18 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -6834,13 +4484,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6854,8 +4504,8 @@
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -6896,111 +4546,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -7013,18 +4558,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -7160,66 +4705,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -7232,13 +4717,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -7389,56 +4874,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -7451,28 +4886,28 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
+                "surat": "Al-'Adiyat, Az-Zalzalah",
+                "ayat": 19
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Bayyinah",
-                "ayat": 8
+                "surat": "Al-Bayyinah, Al-Qadr",
+                "ayat": 13
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -7481,8 +4916,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "At-Tin",
-                "ayat": 8
+                "surat": "At-Tin, Asy-Syarh, Adh-Dhuha",
+                "ayat": 27
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -7496,18 +4931,18 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Balad",
-                "ayat": 20
+                "surat": "Al-Balad, Al-Fajr",
+                "ayat": 35
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Fajr",
-                "ayat": 15
+                "surat": "Al-Fajr, Al-Ghasyiyah",
+                "ayat": 28
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
+                "surat": "Al-Ghasyiyah, Al-A'la",
+                "ayat": 32
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -7521,13 +4956,13 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Buruj",
-                "ayat": 11
+                "surat": "Al-Buruj, Al-Insyiqaq",
+                "ayat": 21
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "Al-Insyiqaq",
-                "ayat": 15
+                "surat": "Al-Insyiqaq, Al-Muthaffifin",
+                "ayat": 23
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -7541,8 +4976,8 @@
             },
             {
                 "media": "Al-Qur'an Digital",
-                "surat": "Al-Infithar",
-                "ayat": 19
+                "surat": "Al-Infithar, At-Takwir",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Digital",
@@ -7583,111 +5018,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba'",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Az-Zalzalah",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qadr",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Asy-Syarh",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Fajr",
-                "ayat": 15
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Ghasyiyah",
-                "ayat": 13
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-A'la",
-                "ayat": 19
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Al-Insyiqaq",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Muthaffifin",
-                "ayat": 8
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "At-Takwir",
-                "ayat": 10
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Digital",
-                "surat": "Adh-Dhuha",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -7700,13 +5030,13 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -7857,56 +5187,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     },
@@ -7919,18 +5199,18 @@
         "hafalan": [
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "an-nas",
-                "ayat": 6
+                "surat": "an-nas, al-falaq, al-ikhlas, al-lahab, an-nashr, al-kafirun",
+                "ayat": 29
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "al-kautsar",
-                "ayat": 3
+                "surat": "al-kautsar, al-ma'un, al-quraisy, al-fil, al-humazah, al-ashr",
+                "ayat": 31
             },
             {
                 "media": "Al-Qur'an Cetak",
-                "surat": "At-Takatsur",
-                "ayat": 8
+                "surat": "At-Takatsur, Al-Qari'ah, Al-'Adiyat",
+                "ayat": 30
             },
             {
                 "media": "Al-Qur'an Cetak",
@@ -8066,66 +5346,6 @@
                 "media": "Al-Qur'an Digital",
                 "surat": "An-Naba",
                 "ayat": 20
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-falaq",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ma'un",
-                "ayat": 7
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-Qari'ah",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ikhlas",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-quraisy",
-                "ayat": 4
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "Al-'Adiyat",
-                "ayat": 11
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-lahab",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-fil",
-                "ayat": 5
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "an-nashr",
-                "ayat": 3
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-humazah",
-                "ayat": 9
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-kafirun",
-                "ayat": 6
-            },
-            {
-                "media": "Al-Qur'an Cetak",
-                "surat": "al-ashr",
-                "ayat": 3
             }
         ]
     }

@@ -4,17 +4,7 @@
 
 @section('content')
 
-    @php
-        $ayatLabel = match ((int) $hafalan->jumlah_ayat) {
-            1 => '1-3 Ayat',
-            2 => '4-6 Ayat',
-            3 => '7-10 Ayat',
-            4 => '>10 Ayat',
-            default => $hafalan->jumlah_ayat . ' Ayat (Lama)'
-        };
-    @endphp
-
-    <x-page-header title="Detail Setoran Hafalan" subtitle="{{ $hafalan->nama_surah }} ({{ $ayatLabel }})" :links="[
+    <x-page-header title="Detail Setoran Hafalan" subtitle="{{ $hafalan->nama_surah }} ({{ $hafalan->jumlah_ayat }} Ayat)" :links="[
             ['label' => 'Dashboard', 'url' => route('dashboard')],
             ['label' => 'Hafalan Saya', 'url' => route('siswa.hafalan.index')],
             ['label' => $hafalan->nama_surah, 'url' => null],

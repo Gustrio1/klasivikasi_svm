@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\DataHafalan;
+use App\Models\HasilKlasifikasi;
 use App\Models\MediaHafalan;
+use App\Models\ModelSvm;
 use App\Models\NilaiEvaluasi;
 use App\Models\Siswa;
 use App\Models\User;
@@ -68,6 +70,10 @@ class DataSiswaBaruSeeder extends Seeder
         $ctrHafalan  = 0;
         $ctrNilai    = 0;
         $ctrSkip     = 0;
+        $ctrKlasifikasi = 0;
+
+        // Ambil model SVM aktif sekali saja
+        $modelSvm = ModelSvm::where('is_active', true)->first();
 
         $bar = $this->command->getOutput()->createProgressBar(count($siswaData));
         $bar->setFormat(' %current%/%max% [%bar%] %percent:3s%% — %message%');
@@ -147,6 +153,47 @@ class DataSiswaBaruSeeder extends Seeder
                 $ctrNilai++;
             }
 
+            // ── Klasifikasi Otomatis ─────────────────────────────────
+            $totalSetoran   = count($hafalan);
+            $totalSurahUnik = count(array_unique(array_column($hafalan, 'surat')));
+
+            // Aturan: >= 30 surat unik = Lulus, < 30 = Tidak Lulus
+            $prediksi = $totalSurahUnik >= 30 ? 'Lulus' : 'Tidak Lulus';
+
+            // Hitung modus media (cetak vs digital)
+            $mediaCounts = array_count_values(array_map(function ($h) {
+                return str_contains(strtolower($h['media']), 'digital')
+                    ? 'digital'
+                    : 'cetak';
+            }, $hafalan));
+            $modusMediaStr  = array_search(max($mediaCounts), $mediaCounts);
+            $modusMediaId   = ($modusMediaStr === 'digital') ? $mediaDigitalId : $mediaCetakId;
+
+            $vectorSvm = [
+                'total_surah'             => $totalSurahUnik,
+                'usia'                    => $data['umur'],
+                'id_media'                => $modusMediaId,
+                'total_setoran_semester'  => $totalSetoran,
+                'total_surah_keseluruhan' => $totalSurahUnik,
+            ];
+
+            if ($modelSvm) {
+                HasilKlasifikasi::create([
+                    'id_siswa'             => $siswa->id,
+                    'periode_semester'     => 'Ganjil 2025/2026',
+                    'total_surah'          => $totalSurahUnik,
+                    'id_model'             => $modelSvm->id,
+                    'kelas_prediksi'       => $prediksi,
+                    'confidence_score'     => 1.0,
+                    'media_input'          => json_encode($vectorSvm),
+                    'notifikasi_terkirim'  => false,
+                    'tanggal_klasifikasi'  => now(),
+                    'vector_svm'           => $vectorSvm,
+                ]);
+                $ctrKlasifikasi++;
+            }
+            // ─────────────────────────────────────────────────────────
+
             $bar->advance();
         }
 
@@ -165,6 +212,7 @@ class DataSiswaBaruSeeder extends Seeder
                 ['──────────────────────────────',  '──────'],
                 ['Total Hafalan Dibuat',              number_format($ctrHafalan)],
                 ['Total Nilai Evaluasi Dibuat',       number_format($ctrNilai)],
+                ['Total Hasil Klasifikasi Dibuat',    number_format($ctrKlasifikasi)],
             ]
         );
         $this->command->info('');

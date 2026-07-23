@@ -6,6 +6,7 @@ use App\Http\Requests\StoreDataHafalanRequest;
 use App\Http\Requests\UpdateDataHafalanRequest;
 use App\Models\DataHafalan;
 use App\Models\Siswa;
+use App\Models\MasterSurah;
 use Illuminate\Support\Facades\DB;
 
 class DataHafalanController extends Controller
@@ -75,9 +76,10 @@ class DataHafalanController extends Controller
             ->get();
         $medias = \App\Models\MediaHafalan::where('is_active', true)
             ->orderBy('nama_media')->get();
+        $masterSurahs = MasterSurah::aktif()->orderBy('nomor_surah')->get();
 
         $view = auth()->user()->role === 'guru' ? 'guru.hafalan.create' : 'siswa.hafalan.create';
-        return view($view, compact('siswas', 'medias'));
+        return view($view, compact('siswas', 'medias', 'masterSurahs'));
     }
 
     /**

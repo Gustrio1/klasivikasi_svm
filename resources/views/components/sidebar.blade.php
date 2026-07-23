@@ -118,7 +118,7 @@
             </div>
 
             {{-- Konten (accordion) --}}
-            <div x-data="{ open: {{ isActive('admin.media-hafalan') || isActive('admin.hafalan') ? 'true' : 'false' }} }">
+            <div x-data="{ open: {{ isActive('admin.media-hafalan') || isActive('admin.hafalan') || isActive('admin.master-surah') ? 'true' : 'false' }} }">
                 <button @click="open = !open" class="nav-item w-full justify-between">
                     <span class="flex items-center gap-3">
                         <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,6 +132,10 @@
                     </svg>
                 </button>
                 <div x-show="open" x-transition class="pl-8 mt-0.5 space-y-0.5">
+                    <a href="{{ route('admin.master-surah.index') }}"
+                       class="{{ isActive('admin.master-surah') ? 'nav-item-active' : 'nav-item' }} text-[13px]">
+                        Master Surat
+                    </a>
                     <a href="{{ route('admin.media-hafalan.index') }}"
                        class="{{ isActive('admin.media-hafalan') ? 'nav-item-active' : 'nav-item' }} text-[13px]">
                         Media Hafalan
